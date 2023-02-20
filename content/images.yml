@@ -1,0 +1,16 @@
+images:
+- name: nvidia
+  creator: ublue-os
+  editions:
+    - name: silverblue
+      desktop: GNOME
+    - name: kinoite
+      desktop: KDE
+    - name: vauxite
+      desktop: XFCE
+    - name: sericea
+      desktop: Sway
+    - name: base
+      desktop: none
+  versions: ["latest", "37-520", "37-525"]
+  imageUrl: ghcr.io/ublue-os/${edition.name}-nvidia
