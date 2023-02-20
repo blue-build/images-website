@@ -1,14 +1,14 @@
 export interface Images {
-    images: Array<Image>
+  images: Array<Image>;
 }
 export interface Image {
-    name: string
-	creator: string
-	editions: Array<Edition>
-	versions: Array<string>
-	imageUrl: string
+  name: string;
+  creator: string;
+  editions: Array<Edition>;
+  versions: Array<string>;
+  imageUrl: string;
 }
 export interface Edition {
-	name: string
-	desktop: string
+  name: string;
+  desktop: string;
 }

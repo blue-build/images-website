@@ -1,16 +1,16 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import ImageCard from '@components/ImageCard.svelte';
+import Layout from "@layouts/Layout.astro";
+import ImageCard from "@components/ImageCard.svelte";
 
-import type { Images } from '@ts/types';
-import imagesUntyped from '@content/images.yml';
+import type { Images } from "@ts/types";
+import imagesUntyped from "@content/images.yml";
 const images: Images = imagesUntyped;
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		<div class="flex">
-			<ImageCard image={images.images[0]}/>
-		</div>
-	</main>
+  <main>
+    <div class="flex">
+      <ImageCard image={images.images[0]} />
+    </div>
+  </main>
 </Layout>
