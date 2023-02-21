@@ -1,3 +1,6 @@
+default:
+    just -l
+
 dev:
     pnpm dev
 
