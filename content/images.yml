@@ -1,5 +1,5 @@
 images:
-  - name: nvidia
+  - name: ${edition.name}-nvidia
     creator: ublue-os
     editions:
       - name: silverblue
@@ -13,4 +13,4 @@ images:
       - name: base
         desktop: none
     versions: ["latest", "37-520", "37-525", "38-525"]
-    imageUrl: ghcr.io/ublue-os/${edition.name}-nvidia
+    imageUrl: ghcr.io/ublue-os/${name}
