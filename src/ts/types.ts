@@ -7,6 +7,7 @@ export interface Image {
   editions: Array<Edition>;
   versions: Array<string>;
   imageUrl: string;
+  githubRepo: string;
 }
 export interface Edition {
   name: string;

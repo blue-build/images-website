@@ -14,3 +14,4 @@ images:
         desktop: none
     versions: ["latest", "37-520", "37-525", "38-525"]
     imageUrl: ghcr.io/ublue-os/${name}
+    githubRepo: ublue-os/nvidia
