@@ -38,7 +38,7 @@
       {/if}
     </div>
     <span>{image.creator}</span>
-    <div class="mt-1 flex gap-2 p-1">
+    <div class="mt-2 flex gap-2 pl-2">
       {#if image.featureSet.includes("nvidia")}
         <span title="Includes Nvidia drivers.">
           <Icon icon={nvidiaIcon} width="24" />
