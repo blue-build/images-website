@@ -28,12 +28,13 @@
         {templateStr(image.name, { edition: edition })}
       </h2>
       {#if githubRepo}
-        <div
-          class="ml-auto mr-2 flex items-center self-center font-bold text-indigo-800"
+        <a
+          href={githubRepo["html_url"]}
+          class="ml-auto flex items-center self-center bg-indigo-50 px-2 py-[0.2rem] font-bold text-indigo-800 outline-2 outline-indigo-800 hover:outline"
         >
           <Icon icon={starRounded} />
           {githubRepo["stargazers_count"]}
-        </div>
+        </a>
       {/if}
     </div>
     <span>{image.creator}</span>
