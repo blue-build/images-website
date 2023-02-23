@@ -9,8 +9,8 @@ const images: Images = imagesUntyped;
 
 <Layout title="Welcome to Astro.">
   <main>
-    <div class="flex gap-2 p-4">
-      <ImageCard image={images.images[0]} />
+    <div class="flex gap-2 p-4 flex-wrap">
+      <ImageCard image={images.images[0]} client:visible />
     </div>
   </main>
 </Layout>
