@@ -5,14 +5,19 @@ images:
     editions:
       - name: silverblue
         desktop: GNOME
+        description: Vanilla Fedora Silverblue with Nvidia drivers.
       - name: kinoite
         desktop: KDE
+        description: Vanilla Fedora Kinoite with Nvidia drivers.
       - name: vauxite
         desktop: XFCE
+        description: Vanilla Fedora Vauxite with Nvidia drivers.
       - name: sericea
         desktop: Sway
+        description: Vanilla Fedora Sericea with Nvidia drivers.
       - name: base
         desktop: none
+        description: Vanilla Fedora ostree base with Nvidia drivers.
     versions: ["latest", "37-520", "37-525", "38-525"]
     imageUrl: ghcr.io/ublue-os/${edition.name}-nvidia
     githubRepo: ublue-os/nvidia

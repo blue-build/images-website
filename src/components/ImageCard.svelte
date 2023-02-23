@@ -38,7 +38,7 @@
       {/if}
     </div>
     <span>{image.creator}</span>
-    <div class="mt-2 flex gap-2 pl-2">
+    <div class="mt-3 flex gap-2 pl-2 mb-1">
       {#if image.featureSet.includes("nvidia")}
         <span title="Includes Nvidia drivers.">
           <Icon icon={nvidiaIcon} width="24" />
@@ -50,6 +50,9 @@
         </span>
       {/if}
     </div>
+    <Box class="ml-2 mt-3 mb-5 max-w-xl outline-gray-100 hover:outline-gray-100">
+      {edition.description}
+    </Box>
     <RebaseCommand {image} {edition} />
   </div>
 {/each}

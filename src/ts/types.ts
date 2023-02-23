@@ -13,4 +13,5 @@ export interface Image {
 export interface Edition {
   name: string;
   desktop: string;
+  description: string;
 }
