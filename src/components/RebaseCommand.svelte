@@ -30,7 +30,7 @@
 
 <div class="flex flex-col gap-2 p-1">
   <span>Rebase to this image:</span>
-  <span class="bg-indigo-100 p-2 font-mono text-sm">
+  <span class="bg-gray-900 p-2 font-mono text-sm text-white outline hover:outline-indigo-300 focus:outline-indigo-300 outline-2 outline-indigo-100 m-1">
     rpm-ostree <wbr />rebase <wbr />ostree-unverified-registry<wbr
     /><!--  
 
@@ -49,12 +49,12 @@
         ></button
       >
       <button
-        class="relative top-1 inline before:absolute before:right-0 before:-top-9 focus:before:content-['copied!']"
+        class="relative top-1 inline before:absolute before:right-0 before:-top-9 before:text-gray-900 focus:before:content-['copied!']"
         on:click={copyRebaseCommand}><Icon icon={copyIcon} width="15" /></button
       >
       <div
         bind:this={dropdown}
-        class="absolute box-content flex hidden flex-col gap-2 bg-indigo-100 p-2 group-hover:flex"
+        class="absolute box-content flex hidden flex-col gap-2 bg-gray-900 p-2 group-hover:flex"
       >
         {#each image.versions as v}
           {#if v !== selectedVersion}
