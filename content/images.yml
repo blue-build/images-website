@@ -1,6 +1,7 @@
 images:
   - name: ${edition.name}-nvidia
     creator: ublue-os
+    featureSet: [nvidia]
     editions:
       - name: silverblue
         desktop: GNOME

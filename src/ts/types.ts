@@ -4,6 +4,7 @@ export interface Images {
 export interface Image {
   name: string;
   creator: string;
+  featureSet: Array<string>;
   editions: Array<Edition>;
   versions: Array<string>;
   imageUrl: string;
