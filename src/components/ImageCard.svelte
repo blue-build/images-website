@@ -7,8 +7,6 @@
   import { onMount } from "svelte";
   export let image: Image;
 
-  // TODO figure out how to async
-
   let githubRepo: Object;
 
   onMount(async () => {
