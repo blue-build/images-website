@@ -8,6 +8,7 @@
   import starRounded from "@iconify/icons-material-symbols/star-rounded";
   import nvidiaIcon from "@iconify/icons-simple-icons/nvidia";
   import distroboxIcon from "@iconify/icons-simple-icons/hackthebox";
+  import RebaseCommand from "@components/RebaseCommand.svelte";
 
   export let image: Image;
 
@@ -26,14 +27,14 @@
       <h2 class="mr-8 text-xl font-bold text-indigo-800">
         {templateStr(image.name, { edition: edition })}
       </h2>
-      <div
-        class="flex items-center self-center justify-self-end font-bold text-indigo-800"
-      >
-        <Icon icon={starRounded} />
-        {#if githubRepo}
+      {#if githubRepo}
+        <div
+          class="ml-auto mr-2 flex items-center self-center font-bold text-indigo-800"
+        >
+          <Icon icon={starRounded} />
           {githubRepo["stargazers_count"]}
-        {/if}
-      </div>
+        </div>
+      {/if}
     </div>
     <span>{image.creator}</span>
     <div class="mt-1 flex gap-2 p-1">
@@ -48,5 +49,6 @@
         </span>
       {/if}
     </div>
+    <RebaseCommand {image} {edition} />
   </div>
 {/each}
