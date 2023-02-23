@@ -1,7 +1,9 @@
 <script lang="ts">
-  import { Feature, Desktop, Edition, Image } from "@ts/types";
+  import type { Edition, Image } from "@ts/types";
+  import { Feature, Desktop } from "@ts/types";
 
-  import Icon, { IconifyIcon } from "@iconify/svelte";
+  import Icon from "@iconify/svelte";
+  import type { IconifyIcon } from "@iconify/svelte";
   
   import gnomeIcon from "@iconify/icons-simple-icons/gnome";
   import kdeIcon from "@iconify/icons-simple-icons/kde";
