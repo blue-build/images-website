@@ -4,6 +4,7 @@ specifiers:
   "@astrojs/svelte": ^2.0.2
   "@astrojs/tailwind": ^3.0.1
   "@iconify/icons-material-symbols": ^1.2.30
+  "@iconify/icons-simple-icons": ^1.2.43
   "@iconify/svelte": ^3.1.0
   "@rollup/plugin-yaml": ^4.0.1
   astro: ^2.0.14
@@ -28,6 +29,7 @@ dependencies:
 
 devDependencies:
   "@iconify/icons-material-symbols": 1.2.30
+  "@iconify/icons-simple-icons": 1.2.43
   "@iconify/svelte": 3.1.0_svelte@3.55.1
   prettier: 2.8.4
   prettier-plugin-astro: 0.8.0
@@ -782,6 +784,15 @@ packages:
     resolution:
       {
         integrity: sha512-5YCfMw87y9Gmf66S84hl/X3226hM85ciATQ9jNCtYng0GfL5rfyB8u9nBu77Ux7bD2SK8yj5lQIaUvyQnbyxOg==,
+      }
+    dependencies:
+      "@iconify/types": 2.0.0
+    dev: true
+
+  /@iconify/icons-simple-icons/1.2.43:
+    resolution:
+      {
+        integrity: sha512-LcXo2vRFugidUw6angRWnDnbf09DMOy1/kM380P1c1Rm8zOJDklzcYk/VTVD4X/eKlb8WIGou/LFMeBjg5alUQ==,
       }
     dependencies:
       "@iconify/types": 2.0.0
