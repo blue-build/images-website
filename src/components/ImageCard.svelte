@@ -23,7 +23,7 @@
 </script>
 
 {#each image.editions as edition}
-  <div class="flex flex-col border-4 border-solid border-indigo-800 p-3">
+  <div class="flex flex-col border-4 border-solid border-indigo-800 p-4">
     <div class="flex flex-row items-center">
       <h2 class="mr-8 text-xl font-bold text-indigo-800">
         {templateStr(image.name, { edition: edition })}
