@@ -1,6 +1,6 @@
 images:
   - name: ${edition.name}-nvidia
-    creator: ublue-os
+    creator: ublue
     featureSet: [nvidia]
     editions:
       - name: silverblue
