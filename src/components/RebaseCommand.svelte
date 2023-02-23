@@ -1,6 +1,7 @@
 <script lang="ts">
   import { templateStr } from "@ts/templateStrings";
   import type { Image, Edition } from "@ts/types";
+  import Box from "@components/Box.svelte";
 
   import Icon from "@iconify/svelte";
   import copyIcon from "@iconify/icons-material-symbols/content-copy-outline-sharp";
@@ -30,7 +31,7 @@
 
 <div class="flex flex-col gap-2 p-1">
   <span>Rebase to this image:</span>
-  <span class="bg-gray-900 p-2 font-mono text-sm text-white outline hover:outline-indigo-300 focus:outline-indigo-300 outline-2 outline-indigo-100 m-1">
+  <Box dark class="m-1 font-mono text-sm">
     rpm-ostree <wbr />rebase <wbr />ostree-unverified-registry<wbr
     /><!--  
 
@@ -54,21 +55,23 @@
       >
       <div
         bind:this={dropdown}
-        class="absolute box-content flex hidden flex-col gap-2 bg-gray-900 p-2 group-hover:flex"
+        class="absolute box-content flex hidden flex-col gap-2 group-hover:flex"
       >
-        {#each image.versions as v}
-          {#if v !== selectedVersion}
-            <button
-              class="group block hover:cursor-pointer hover:underline"
-              on:click={() => (selectedVersion = v)}
-            >
-              {v}
-            </button>
-          {/if}
-        {/each}
+        <Box dark class="mt-1">
+          {#each image.versions as v}
+            {#if v !== selectedVersion}
+              <button
+                class="group block hover:cursor-pointer hover:underline"
+                on:click={() => (selectedVersion = v)}
+              >
+                {v}
+              </button>
+            {/if}
+          {/each}
+        </Box>
       </div>
     </span>
-  </span>
+  </Box>
 </div>
 
 <style>
