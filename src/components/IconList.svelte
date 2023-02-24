@@ -4,7 +4,7 @@
 
   import Icon from "@iconify/svelte";
   import type { IconifyIcon } from "@iconify/svelte";
-  
+
   import gnomeIcon from "@iconify/icons-simple-icons/gnome";
   import kdeIcon from "@iconify/icons-simple-icons/kde";
   import xfceIcon from "@iconify/icons-simple-icons/xfce";
