@@ -50,8 +50,8 @@
         ></button
       >
       <button
-        class="relative top-1 inline before:absolute before:right-0 before:-top-9 before:text-gray-900 focus:before:content-['copied!']"
-        on:click={copyRebaseCommand}><Icon icon={copyIcon} width="15" /></button
+        class="relative top-1 ml-2 mr-1 inline before:absolute before:right-0 before:-top-9 before:text-gray-900 focus:before:content-['copied!']"
+        on:click={copyRebaseCommand}><Icon icon={copyIcon} width="16" /></button
       >
       <div
         bind:this={dropdown}
