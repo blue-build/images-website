@@ -36,13 +36,13 @@
     rpm-ostree <wbr />rebase <wbr />ostree-unverified-registry<wbr
     /><!--  
 
--->:{templateStr(image.imageUrl, {
+-->:<span class="font-semibold">{templateStr(image.imageUrl, {
       edition: edition,
-    })}<wbr /><!-- 
+    })}</span><wbr /><!-- 
     
     -->:<span class="group inline-block">
       <button
-        class="underline-dotted select-text underline"
+        class="underline-dotted select-text underline font-semibold"
         on:click={toggleDropdown}
         >{selectedVersion}
         <span
