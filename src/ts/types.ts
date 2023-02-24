@@ -28,3 +28,8 @@ export enum Desktop {
   sway = "Sway",
   none = "none",
 }
+
+export interface ImageFilter {
+  featureSet: Array<Feature>;
+  desktop: Array<Desktop>;
+}
