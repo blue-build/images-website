@@ -20,8 +20,8 @@
   };
 </script>
 
-{#each filteredImages as image}
-  <div class="flex flex-wrap gap-2 p-4">
+<div class="flex flex-wrap gap-2 p-4">
+  {#each filteredImages as image}
     <ImageCard {image} {filter} />
-  </div>
-{/each}
+  {/each}
+</div>
