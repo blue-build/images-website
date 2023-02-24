@@ -30,6 +30,7 @@
 </script>
 
 <div class="flex flex-col gap-2 p-1">
+  <!-- Odd comments and newline placing is to prevent extra whitespace -->
   <span>Rebase to this image:</span>
   <Box dark class="m-1 font-mono text-sm">
     rpm-ostree <wbr />rebase <wbr />ostree-unverified-registry<wbr
