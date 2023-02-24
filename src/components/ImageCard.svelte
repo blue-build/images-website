@@ -5,7 +5,7 @@
   import type { Image } from "@ts/types";
 
   import Icon from "@iconify/svelte";
-  import gitFork from '@iconify/icons-ph/git-fork-bold';
+  import gitFork from "@iconify/icons-ph/git-fork-bold";
   import starRounded from "@iconify/icons-material-symbols/star-rounded";
   import RebaseCommand from "@components/RebaseCommand.svelte";
   import Box from "@components/Box.svelte";
@@ -19,7 +19,7 @@
     githubRepo = await getGithubRepository(image.githubRepo).then(
       (data) => data
     );
-    console.log(githubRepo)
+    console.log(githubRepo);
   });
 </script>
 
@@ -30,12 +30,12 @@
         {templateStr(image.name, { edition: edition })}
       </h2>
       {#if githubRepo}
-      <Box class="ml-auto px-2 py-[0.2rem]">
-        <a href={githubRepo["html_url"]} class="flex items-center font-bold">
-          <Icon icon={gitFork} />
-          {githubRepo["forks_count"]}
-        </a>
-      </Box>
+        <Box class="ml-auto px-2 py-[0.2rem]">
+          <a href={githubRepo["html_url"]} class="flex items-center font-bold">
+            <Icon icon={gitFork} />
+            {githubRepo["forks_count"]}
+          </a>
+        </Box>
         <Box class="px-2 py-[0.2rem]">
           <a href={githubRepo["html_url"]} class="flex items-center font-bold">
             <Icon icon={starRounded} />

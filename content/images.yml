@@ -18,6 +18,7 @@ images:
       - name: base
         desktop: none
         description: Vanilla Fedora ostree base with Nvidia drivers.
-    versions: ["latest", "37-current", "38-current", "37-520", "37-525", "38-525"]
+    versions:
+      ["latest", "37-current", "38-current", "37-520", "37-525", "38-525"]
     imageUrl: ghcr.io/ublue-os/${edition.name}-nvidia
     githubRepo: ublue-os/nvidia
