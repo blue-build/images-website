@@ -1,7 +1,7 @@
 <script lang="ts">
   import ImageCard from "@components/ImageCard.svelte";
 
-  import type { ImageFilter, Images } from "@ts/types";
+  import { ImageFilter, Images } from "@ts/types";
   import imagesUntyped from "@content/images.yml";
   const images: Images = imagesUntyped;
 
@@ -22,6 +22,6 @@
 
 {#each filteredImages as image}
   <div class="flex flex-wrap gap-2 p-4">
-    <ImageCard {image} />
+    <ImageCard {image} {filter} />
   </div>
 {/each}

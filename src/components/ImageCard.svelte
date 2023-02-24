@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import { getGithubRepository } from "@ts/apiHelpers";
   import { templateStr } from "@ts/templateStrings";
-  import type { Image } from "@ts/types";
+  import type { Image, ImageFilter } from "@ts/types";
 
   import Icon from "@iconify/svelte";
   import gitFork from "@iconify/icons-ph/git-fork-bold";
@@ -12,6 +12,16 @@
   import IconList from "@components/IconList.svelte";
 
   export let image: Image;
+  export let filter: ImageFilter;
+
+  $: filteredEditions = image.editions.filter((e) => {
+    if (filter.featureSet.length < 1 && filter.desktop.length < 1) return true;
+
+    if (filter.desktop.length > 0) {
+      return filter.desktop.every((d) => e.desktop === d);
+    }
+    return true;
+  });
 
   let githubRepo: Object;
 
@@ -23,7 +33,7 @@
   });
 </script>
 
-{#each image.editions as edition}
+{#each filteredEditions as edition}
   <div class="flex flex-col border-4 border-solid border-indigo-800 p-4">
     <div class="flex flex-row items-center gap-2">
       <h2 class="mr-8 text-xl font-bold text-indigo-800">
