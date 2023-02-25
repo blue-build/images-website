@@ -34,3 +34,18 @@ images:
       ["latest", "37-current", "38-current", "37-520", "37-525", "38-525"]
     imageUrl: ghcr.io/ublue-os/${edition.name}-nvidia
     githubRepo: ublue-os/nvidia
+
+  - name: B${edition.name}
+    creator: ublue
+    featureSet: [nvidia, distrobox]
+    editions:
+      # having a capitalized pretty name and an uri
+      # byd oing it like this is kind of a hack lol but it works
+      - name: azzite
+        desktop: KDE
+        description: Bazzite is an OCI based off of ublue-os/kinoite-nvidia that is intended to be an alternative OS for the Steam Deck and a SteamOS-alike for desktops.
+      - name: azzite-desktop
+        desktop: KDE
+        description: Bazzite is an OCI based off of ublue-os/kinoite-nvidia that is intended to be an alternative OS for the Steam Deck and a SteamOS-alike for desktops. This is the desktop version.
+    versions: ["latest", "37"]
+    imageUrl: ghcr.io/ublue-os/b${edition.name}
