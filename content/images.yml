@@ -49,3 +49,4 @@ images:
         description: Bazzite is an OCI based off of ublue-os/kinoite-nvidia that is intended to be an alternative OS for the Steam Deck and a SteamOS-alike for desktops. This is the desktop version.
     versions: ["latest", "37"]
     imageUrl: ghcr.io/ublue-os/b${edition.name}
+    githubRepo: ublue-os/bazzite
