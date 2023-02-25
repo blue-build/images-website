@@ -1,4 +1,36 @@
 images:
+  # This document contains all of the metadata for the images to be showcased on the website
+  # The structure of this document is declared in src/ts/types.ts
+
+  # Example single-edition image with explanations:
+
+  # - name: MyOstree # the name to be shown in the image list, has access to the edition object using javascript template syntax
+  #   creator: ublue # if it's under the ublue org, the creator should be ublue, otherwise you're free to use whatever name
+  #   featureSet: [nvidia, distrobox, autoupdate] # the feature names should be self-explanatory, this list will be updated to match all supported features
+  #   editions:
+  #     - name: MyOstree # this is not used anywhere unless defined in the name or imageUrl parameter
+  #       desktop: GNOME # supported values: GNOME, KDE, XFCE, Sway, none
+  #       description: "MyOstree is a Fedora Silverblue image with nvidia drivers, distrobox preinstalled with a pre-configured environment and automatic updates."
+  #   versions: ["latest", "37", "38"] # list of image "versions" or "tags" to show on the selector
+  #   imageUrl: ghcr.io/ublue-os/myostree # url to the image registry which can be used for rebasing, without a tag or version
+  #   githubRepo: ublue-os/myostree # github repository uri owner/reponame
+
+  # Example multi-edition image with explanations:
+
+  # - name: alicelinux-${edition.name}-${edition.desktop} # here the template syntax is used to include both the edition name and desktop in the image name on in the ui
+  #   creator: alice
+  #   featureSet: [distrobox]
+  #   editions:
+  #     - name: base # produces an image listing called alicelinux-base-GNOME
+  #       desktop: GNOME
+  #       description: "Alice's Fedora with preconfigured distrobox"
+  #     - name: gaming # produces an image listing called alicelinux-gaming-KDE
+  #       desktop: KDE
+  #       description: "Alice's Fedora with preconfigured distrobox and some goodies for gamers."
+  #   versions: ["latest", "37"] # list of image "versions" or "tags" to show on the selector
+  #   imageUrl: ghcr.io/alice/alicelinux
+  #   githubRepo: alice/alicelinux
+
   - name: base
     creator: ublue
     featureSet: [distrobox, autoupdate]
