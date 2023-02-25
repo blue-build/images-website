@@ -14,13 +14,13 @@ export interface Edition {
   name: string;
   desktop: Desktop;
   description: string;
-  versions: Array<string>|undefined;
+  versions: Array<string> | undefined;
 }
 
 export enum Feature {
   nvidia = "nvidia",
   distrobox = "distrobox",
-  autoupdate = "autoupdate"
+  autoupdate = "autoupdate",
 }
 
 export enum Desktop {

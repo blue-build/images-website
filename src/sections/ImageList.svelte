@@ -99,7 +99,7 @@
   {/each}
 </div>
 
-<div class="flex flex-col gap-4 p-4 w-max m-5">
+<div class="m-5 flex w-max flex-col gap-4 p-4">
   {#each filteredImages as image}
     <ImageCard {image} {filter} />
   {/each}
