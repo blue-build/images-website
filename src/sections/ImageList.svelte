@@ -9,16 +9,16 @@
   import distroboxIcon from "@iconify/icons-simple-icons/hackthebox";
 
   import type { ImageFilter, Images } from "@ts/types";
-  import { Feature } from "@ts/types";
+  import { Feature, Desktop } from "@ts/types";
 
   import imagesUntyped from "@content/images.yml";
+  import { table } from "astro/dist/core/logger/core";
   const images: Images = imagesUntyped;
 
   $: filteredImages = filterImages(filter);
   function filterImages(filter: ImageFilter) {
     return images.images.filter((i) => {
-      if (filter.featureSet.length < 1 && filter.desktop.length < 1)
-        return true;
+      if (filter.featureSet.length < 1 && filter.desktop === null) return true;
       if (filter.featureSet.length > 0) {
         return filter.featureSet.every((f) => i.featureSet.includes(f));
       }
@@ -28,7 +28,7 @@
 
   let filter: ImageFilter = {
     featureSet: [],
-    desktop: [],
+    desktop: "",
   };
 
   interface FeatureButton {
@@ -53,6 +53,20 @@
 <div
   class="m-4 flex flex-row gap-2 bg-indigo-100 max-w-4xl border-4 border-indigo-900 p-3"
 >
+  <Box>
+    <label for="de">Desktop:</label>
+    <select
+      class="bg-transparent text-center"
+      id="de"
+      bind:value={filter.desktop}
+    >
+      <option value="" selected>-</option>
+      {#each Object.values(Desktop) as d}
+        <option value={d}>{d}</option>
+      {/each}
+    </select>
+  </Box>
+
   {#each featureButtons as fb}
     <Checkbox
       change={(e) => {

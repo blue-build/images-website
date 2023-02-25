@@ -15,10 +15,10 @@
   export let filter: ImageFilter;
 
   $: filteredEditions = image.editions.filter((e) => {
-    if (filter.featureSet.length < 1 && filter.desktop.length < 1) return true;
+    if (filter.featureSet.length < 1 && filter.desktop === null) return true;
 
-    if (filter.desktop.length > 0) {
-      return filter.desktop.every((d) => e.desktop === d);
+    if (filter.desktop !== null && filter.desktop.length > 0) {
+      return filter.desktop === e.desktop;
     }
     return true;
   });
