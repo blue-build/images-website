@@ -14,6 +14,7 @@ export interface Edition {
   name: string;
   desktop: Desktop;
   description: string;
+  versions: Array<string>|undefined;
 }
 
 export enum Feature {

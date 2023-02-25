@@ -15,6 +15,7 @@ images:
       - name: sericea
         desktop: Sway
         description: Vanilla Fedora Sericea with Nvidia drivers.
+        versions: ["38-current", "38-525"] # there's no F37 version of sericea
       - name: base
         desktop: none
         description: Vanilla Fedora ostree base with Nvidia drivers.
