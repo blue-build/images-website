@@ -1,4 +1,15 @@
 images:
+  - name: base
+    creator: ublue
+    featureSet: [distrobox, autoupdate]
+    editions:
+      - name: base
+        desktop: GNOME
+        description: "Base image: Silverblue with unfiltered Flathub, distrobox, and automatic updates"
+    versions: ["latest", "37", "38"]
+    imageUrl: ghcr.io/ublue-os/base
+    githubRepo: ublue-os/base
+
   - name: ${edition.name}-nvidia
     creator: ublue
     featureSet: [nvidia]
