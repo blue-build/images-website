@@ -100,7 +100,7 @@ images:
     editions:
       - name: vauxite
         desktop: XFCE
-        description: Immutable Fedora-based Xfce desktop
+        description: "Immutable Fedora-based Xfce desktop. Note: this image has slightly more addons than the fedora-built image at https://quay.io/repository/fedora-ostree-desktops/vauxites."
     versions: ["latest"]
     imageUrl: ghcr.io/ublue-os/vauxite
     githubRepo: ublue-os/vauxite
