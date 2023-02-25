@@ -50,3 +50,14 @@ images:
     versions: ["latest", "37"]
     imageUrl: ghcr.io/ublue-os/b${edition.name}
     githubRepo: ublue-os/bazzite
+
+  - name: Ubuntu
+    creator: ublue
+    featureSet: [distrobox]
+    editions:
+      - name: ubuntu
+        desktop: GNOME
+        description: Fedora Silverblue for Ubuntu Expatriates
+    versions: ["latest", "37"]
+    imageUrl: ghcr.io/ublue-os/ubuntu
+    githubRepo: ublue-os/ubuntu
