@@ -29,7 +29,6 @@
     githubRepo = await getGithubRepository(image.githubRepo).then(
       (data) => data
     );
-    console.log(githubRepo);
   });
 </script>
 
