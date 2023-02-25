@@ -54,10 +54,6 @@
           class="inline-block select-none transition">▼</span
         ></button
       >
-      <button
-        class="relative top-1 ml-2 mr-1 inline before:absolute before:right-0 before:-top-9 before:text-gray-900 focus:before:content-['copied!']"
-        on:click={copyRebaseCommand}><Icon icon={copyIcon} width="16" /></button
-      >
       <div
         bind:this={dropdown}
         class="absolute box-content flex hidden flex-col gap-2 group-hover:flex"
@@ -75,6 +71,11 @@
           {/each}
         </Box>
       </div>
+
+      <button
+        class="relative top-1 ml-2 mr-1 inline before:absolute before:right-0 before:-top-9 before:text-gray-900 focus:before:content-['copied!']"
+        on:click={copyRebaseCommand}><Icon icon={copyIcon} width="16" /></button
+      >
     </span>
   </Box>
 </div>
