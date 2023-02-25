@@ -61,3 +61,36 @@ images:
     versions: ["latest", "37"]
     imageUrl: ghcr.io/ublue-os/ubuntu
     githubRepo: ublue-os/ubuntu
+
+  - name: vauxite
+    creator: ublue
+    featureSet: []
+    editions:
+      - name: vauxite
+        desktop: XFCE
+        description: Immutable Fedora-based Xfce desktop
+    versions: ["latest"]
+    imageUrl: ghcr.io/ublue-os/vauxite
+    githubRepo: ublue-os/vauxite
+
+  - name: lxqt
+    creator: ublue
+    featureSet: []
+    editions:
+      - name: lxqt
+        desktop: LXQt
+        description: Immutable Fedora-based LXQt desktop container image
+    versions: ["latest"]
+    imageUrl: ghcr.io/ublue-os/lxqt
+    githubRepo: ublue-os/lxqt
+
+  - name: mate
+    creator: ublue
+    featureSet: []
+    editions:
+      - name: mate
+        desktop: MATE
+        description: Immutable Fedora-based MATE Desktop container image
+    versions: ["latest"]
+    imageUrl: ghcr.io/ublue-os/mate
+    githubRepo: ublue-os/mate
