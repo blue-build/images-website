@@ -20,6 +20,7 @@ export interface Edition {
 export enum Feature {
   nvidia = "nvidia",
   distrobox = "distrobox",
+  autoupdate = "autoupdate"
 }
 
 export enum Desktop {

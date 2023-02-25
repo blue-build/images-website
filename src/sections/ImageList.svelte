@@ -7,6 +7,7 @@
   import type { IconifyIcon } from "@iconify/svelte";
   import nvidiaIcon from "@iconify/icons-simple-icons/nvidia";
   import distroboxIcon from "@iconify/icons-simple-icons/hackthebox";
+  import autoUpdateIcon from "@iconify/icons-material-symbols/cycle";
 
   import type { ImageFilter, Images } from "@ts/types";
   import { Feature, Desktop } from "@ts/types";
@@ -45,6 +46,11 @@
       text: "Distrobox",
       feature: Feature.distrobox,
       icon: distroboxIcon,
+    },
+    {
+      text: "Automatic updates",
+      feature: Feature.autoupdate,
+      icon: autoUpdateIcon,
     },
   ];
 </script>

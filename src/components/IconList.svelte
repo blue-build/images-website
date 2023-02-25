@@ -12,6 +12,7 @@
   import noDeIcon from "@iconify/icons-material-symbols/close-rounded";
   import nvidiaIcon from "@iconify/icons-simple-icons/nvidia";
   import distroboxIcon from "@iconify/icons-simple-icons/hackthebox";
+  import autoUpdateIcon from "@iconify/icons-material-symbols/cycle";
 
   export let image: Image;
   export let edition: Edition;
@@ -57,6 +58,11 @@
       condition: image.featureSet.includes(Feature.distrobox),
       icon: distroboxIcon,
       tooltip: "Includes distrobox.",
+    },
+    {
+      condition: image.featureSet.includes(Feature.autoupdate),
+      icon: autoUpdateIcon,
+      tooltip: "Includes automatic updates.",
     },
   ];
 </script>
