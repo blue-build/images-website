@@ -12,7 +12,6 @@
   import { Feature, Desktop } from "@ts/types";
 
   import imagesUntyped from "@content/images.yml";
-  import { table } from "astro/dist/core/logger/core";
   const images: Images = imagesUntyped;
 
   $: filteredImages = filterImages(filter);
