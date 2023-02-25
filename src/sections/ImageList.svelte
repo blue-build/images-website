@@ -50,7 +50,7 @@
 </script>
 
 <div
-  class="m-4 flex flex-row gap-2 bg-indigo-100 max-w-4xl border-4 border-indigo-900 p-3"
+  class="m-4 flex max-w-4xl flex-row gap-2 border-4 border-indigo-900 bg-indigo-100 p-3"
 >
   <Box>
     <label for="de">Desktop:</label>
@@ -78,7 +78,7 @@
       }}
     >
       <Box
-        class="flex flex-row gap-2 group-[.isChecked]:bg-indigo-300 group-[.isChecked]:outline group-[.isChecked]:outline-indigo-500 group-[.isChecked]:hover:outline-indigo-400 outline-2"
+        class="flex flex-row gap-2 outline-2 group-[.isChecked]:bg-indigo-300 group-[.isChecked]:outline group-[.isChecked]:outline-indigo-500 group-[.isChecked]:hover:outline-indigo-400"
       >
         <Icon icon={fb.icon} class="self-center" />
         {fb.text}

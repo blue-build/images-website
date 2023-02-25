@@ -31,5 +31,5 @@ export enum Desktop {
 
 export interface ImageFilter {
   featureSet: Array<Feature>;
-  desktop: Desktop|"";
+  desktop: Desktop | "";
 }
