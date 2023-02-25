@@ -40,7 +40,7 @@ images:
     featureSet: [nvidia, distrobox]
     editions:
       # having a capitalized pretty name and an uri
-      # byd oing it like this is kind of a hack lol but it works
+      # by doing it like this is kind of a hack lol but it works
       - name: azzite
         desktop: KDE
         description: Bazzite is an OCI based off of ublue-os/kinoite-nvidia that is intended to be an alternative OS for the Steam Deck and a SteamOS-alike for desktops.
