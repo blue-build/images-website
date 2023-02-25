@@ -9,6 +9,7 @@
   import kdeIcon from "@iconify/icons-simple-icons/kde";
   import xfceIcon from "@iconify/icons-simple-icons/xfce";
   import genericWmIcon from "@iconify/icons-material-symbols/grid-view";
+  import genericDeIcon from "@iconify/icons-material-symbols/dock-to-right";
   import noDeIcon from "@iconify/icons-material-symbols/close-rounded";
   import nvidiaIcon from "@iconify/icons-simple-icons/nvidia";
   import distroboxIcon from "@iconify/icons-simple-icons/hackthebox";
@@ -43,6 +44,16 @@
       condition: edition.desktop === Desktop.sway,
       icon: genericWmIcon,
       tooltip: "Uses SwayWM by default.",
+    },
+    {
+      condition: edition.desktop === Desktop.lxqt,
+      icon: genericDeIcon,
+      tooltip: "Uses LXQt by default.",
+    },
+    {
+      condition: edition.desktop === Desktop.mate,
+      icon: genericDeIcon,
+      tooltip: "Uses MATE by default.",
     },
     {
       condition: edition.desktop === Desktop.none,

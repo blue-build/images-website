@@ -28,6 +28,8 @@ export enum Desktop {
   kde = "KDE",
   xfce = "XFCE",
   sway = "Sway",
+  lxqt = "LXQt",
+  mate = "MATE",
   none = "none",
 }
 

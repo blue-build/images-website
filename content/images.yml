@@ -9,7 +9,7 @@ images:
   #   featureSet: [nvidia, distrobox, autoupdate] # the feature names should be self-explanatory, this list will be updated to match all supported features
   #   editions:
   #     - name: MyOstree # this is not used anywhere unless defined in the name or imageUrl parameter
-  #       desktop: GNOME # supported values: GNOME, KDE, XFCE, Sway, none
+  #       desktop: GNOME # supported values: GNOME, KDE, XFCE, Sway, LXQt, MATE, none
   #       description: "MyOstree is a Fedora Silverblue image with nvidia drivers, distrobox preinstalled with a pre-configured environment and automatic updates."
   #   versions: ["latest", "37", "38"] # list of image "versions" or "tags" to show on the selector
   #   imageUrl: ghcr.io/ublue-os/myostree # url to the image registry which can be used for rebasing, without a tag or version
