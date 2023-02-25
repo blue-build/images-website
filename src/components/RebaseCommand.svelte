@@ -46,6 +46,7 @@
     
     -->:<span class="group inline-block">
       <button
+        title="Select the desired image version."
         class="underline-dotted select-text font-semibold underline"
         on:click={toggleDropdown}
         >{selectedVersion}
@@ -73,6 +74,7 @@
       </div>
 
       <button
+        title="Copy rebase command to clipboard."
         class="relative top-1 ml-2 mr-1 inline before:absolute before:right-0 before:-top-9 before:text-gray-900 focus:before:content-['copied!']"
         on:click={copyRebaseCommand}><Icon icon={copyIcon} width="16" /></button
       >

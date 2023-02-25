@@ -40,13 +40,21 @@
       </h2>
       {#if githubRepo}
         <Box class="ml-auto px-2 py-[0.2rem]">
-          <a href={githubRepo["html_url"]} class="flex items-center font-bold">
+          <a
+            href={githubRepo["html_url"]}
+            class="flex items-center font-bold"
+            title="Open the images Github repository."
+          >
             <Icon icon={gitFork} />
             {githubRepo["forks_count"]}
           </a>
         </Box>
         <Box class="px-2 py-[0.2rem]">
-          <a href={githubRepo["html_url"]} class="flex items-center font-bold">
+          <a
+            href={githubRepo["html_url"]}
+            class="flex items-center font-bold"
+            title="Open the images Github repository."
+          >
             <Icon icon={starRounded} />
             {githubRepo["stargazers_count"]}
           </a>
