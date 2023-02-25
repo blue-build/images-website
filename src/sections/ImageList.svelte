@@ -58,7 +58,13 @@
 <div
   class="m-4 flex max-w-3xl flex-row gap-2 border-4 border-indigo-900 bg-indigo-100 p-3"
 >
-  <Box>
+  <Box
+    class={`${
+      filter.desktop !== ""
+        ? "bg-indigo-300 outline outline-indigo-500 hover:outline-indigo-400"
+        : ""
+    }`}
+  >
     <label for="de">Desktop:</label>
     <select
       class="bg-transparent text-center"
