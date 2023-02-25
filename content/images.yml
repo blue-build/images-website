@@ -28,7 +28,7 @@ images:
   #       desktop: KDE
   #       description: "Alice's Fedora with preconfigured distrobox and some goodies for gamers."
   #   versions: ["latest", "37"] # list of image "versions" or "tags" to show on the selector
-  #   imageUrl: ghcr.io/alice/alicelinux
+  #   imageUrl: ghcr.io/alice/alicelinux-${edition.name}-${edition.desktop}
   #   githubRepo: alice/alicelinux
 
   - name: base
