@@ -87,7 +87,7 @@
   {/each}
 </div>
 
-<div class="flex flex-wrap gap-2 p-4">
+<div class="flex flex-col gap-2 p-4 w-max">
   {#each filteredImages as image}
     <ImageCard {image} {filter} />
   {/each}
