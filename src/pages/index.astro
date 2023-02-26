@@ -6,6 +6,11 @@ import ImageList from "@sections/ImageList.svelte";
 
 <script>
   import { darkModeStore } from "@ts/stores";
+
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    darkModeStore.set(true);
+  }
+
   let main = document.querySelector("main");
   darkModeStore.subscribe((d) => {
     if (d) main.classList.add("dark");
