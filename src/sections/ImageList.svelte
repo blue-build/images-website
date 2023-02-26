@@ -67,7 +67,7 @@
   >
     <label for="de">Desktop:</label>
     <select
-      class="bg-transparent text-center"
+      class="bg-transparent text-center cursor-pointer"
       id="de"
       bind:value={filter.desktop}
     >

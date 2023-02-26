@@ -12,6 +12,10 @@
   bind:checked
   on:change={change}
 />
-<label for={`checkbox-${uid}`} class="group" class:isChecked={checked}>
+<label
+  for={`checkbox-${uid}`}
+  class="group cursor-pointer"
+  class:isChecked={checked}
+>
   <slot />
 </label>
