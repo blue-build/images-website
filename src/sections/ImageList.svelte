@@ -56,7 +56,7 @@
 </script>
 
 <div
-  class="flex max-w-3xl flex-row gap-2 border-4 border-indigo-900 bg-indigo-100 p-3"
+  class="flex max-w-3xl flex-row gap-2 border-4 border-indigo-900 dark:bg-gray-800 dark:border-indigo-700 bg-indigo-100 p-3"
 >
   <Box
     class={`${

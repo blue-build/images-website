@@ -4,7 +4,9 @@ import ImageList from "@sections/ImageList.svelte";
 ---
 
 <Layout title="Universal Blue">
-  <main>
-    <ImageList client:load />
+  <main class="dark">
+    <div class="dark:bg-gray-900 p-4 min-h-screen">
+      <ImageList client:load />
+    </div>
   </main>
 </Layout>
