@@ -1,11 +1,22 @@
 ---
+import DarkModeButton from "@components/DarkModeButton.svelte";
 import Layout from "@layouts/Layout.astro";
 import ImageList from "@sections/ImageList.svelte";
 ---
 
+<script>
+  import { darkModeStore } from "@ts/stores";
+  let main = document.querySelector("main");
+  darkModeStore.subscribe((d) => {
+    if (d) main.classList.add("dark");
+    else main.classList.remove("dark");
+  });
+</script>
+
 <Layout title="Universal Blue">
-  <main class="dark">
+  <main>
     <div class="dark:bg-gray-900 p-4 min-h-screen">
+      <DarkModeButton client:idle />
       <ImageList client:load />
     </div>
   </main>
