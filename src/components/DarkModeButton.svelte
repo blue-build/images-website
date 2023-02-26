@@ -18,7 +18,7 @@
   }
 </script>
 
-<button on:click={switchMode} class="absolute right-4 top-4">
+<button on:click={switchMode} class="fixed right-4 top-4">
   <Box>
     <Icon icon={currentIcon} />
   </Box>
