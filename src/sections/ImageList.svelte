@@ -71,9 +71,9 @@
       id="de"
       bind:value={filter.desktop}
     >
-      <option value="" selected>-</option>
+      <option class="text-black" value="" selected>-</option>
       {#each Object.values(Desktop) as d}
-        <option value={d}>{d}</option>
+        <option class="text-black" value={d}>{d}</option>
       {/each}
     </select>
   </Box>
