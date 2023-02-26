@@ -56,7 +56,7 @@
 </script>
 
 <div
-  class="m-4 flex max-w-3xl flex-row gap-2 border-4 border-indigo-900 bg-indigo-100 p-3"
+  class="flex max-w-3xl flex-row gap-2 border-4 border-indigo-900 bg-indigo-100 p-3"
 >
   <Box
     class={`${
@@ -99,7 +99,7 @@
   {/each}
 </div>
 
-<div class="m-5 flex w-max flex-col gap-4 p-4">
+<div class="m-2 flex w-max flex-col gap-4 p-4">
   {#each filteredImages as image}
     <ImageCard {image} {filter} />
   {/each}
