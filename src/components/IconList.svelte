@@ -10,16 +10,6 @@
   import Icon from "@iconify/svelte";
   import type { IconifyIcon } from "@iconify/svelte";
 
-  import gnomeIcon from "@iconify/icons-simple-icons/gnome";
-  import kdeIcon from "@iconify/icons-simple-icons/kde";
-  import xfceIcon from "@iconify/icons-simple-icons/xfce";
-  import genericWmIcon from "@iconify/icons-material-symbols/grid-view";
-  import genericDeIcon from "@iconify/icons-material-symbols/dock-to-right";
-  import noDeIcon from "@iconify/icons-material-symbols/close-rounded";
-  import nvidiaIcon from "@iconify/icons-simple-icons/nvidia";
-  import distroboxIcon from "@iconify/icons-simple-icons/hackthebox";
-  import autoUpdateIcon from "@iconify/icons-material-symbols/cycle";
-
   export let image: Image;
   export let edition: Edition;
 
