@@ -22,6 +22,7 @@ As per the ublue-orgs standards, this project uses [Conventional Commits](https:
 ### Set up local environment
 
 To get started, you only need to install `pnpm` and optionally `just`.
+In the future, I might provide a distrobox/container image with the environment I use.
 
 1. Clone the project and cd into it.
 2. Run `pnpm install` to install to install the deps.
