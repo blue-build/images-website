@@ -17,6 +17,18 @@ All of the documentation needed to contribute to `images.yml` live in the docume
 
 This website is built using Astro, Svelte, Typescript, TailwindCSS and Prettier. Some useful commands for this project are declared in the justfile and can be used with the just command runner. This project uses pnpm instead of npm for its superior speed and effiency.
 
+As per the ublue-orgs standards, this project uses [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+
+### Set up local environment
+
+To get started, you only need to install `pnpm` and optionally `just`.
+
+1. Clone the project and cd into it.
+2. Run `pnpm install` to install to install the deps.
+3. Run `pnpm dev` (or `just dev`) to start the autorefreshing Vite dev server.
+
+Once you've made some changes, run `just fmt` (runs the command `pnpm prettier --write . --plugin-search-dir=.`) to format the files accordingly. If this formats some files you didn't touch, commit the changes with a message like `style: prettier fmt`.
+
 ### Rationale
 
 #### Why Typescript and TailwindCSS?
