@@ -1,5 +1,10 @@
 import type { DesktopMeta, FeatureMeta } from "@ts/types";
 
+// Icons for use in the image listing (IconList.svelte) and the filter options (ImageList.svelte).
+// Icons from https://iconify.design/, copy the "Svelte (offline)" import and name it accordingly.
+// Prefer icons from already installed icon packs: Material symbols, Simple Icons, Phosphor.
+// If usage of another icon pack is necessary
+// add it as a development dependency using pnpm and the instructions provided by iconify.design.
 import gnomeIcon from "@iconify/icons-simple-icons/gnome";
 import kdeIcon from "@iconify/icons-simple-icons/kde";
 import xfceIcon from "@iconify/icons-simple-icons/xfce";
@@ -9,6 +14,11 @@ import noDeIcon from "@iconify/icons-material-symbols/close-rounded";
 import nvidiaIcon from "@iconify/icons-simple-icons/nvidia";
 import distroboxIcon from "@iconify/icons-simple-icons/hackthebox";
 import autoUpdateIcon from "@iconify/icons-material-symbols/cycle";
+
+
+// In both enums:
+// The value on the right is what HAS to be written the same way as in images.yml,
+// and the key on the left is the alias of it inside the typescript code (prefer smallcaps for that)
 
 export enum Desktop {
   gnome = "GNOME",
@@ -25,6 +35,11 @@ export enum Feature {
   distrobox = "distrobox",
   autoupdate = "autoupdate",
 }
+
+
+// desktop: reference to the correct desktop in the desktop enum
+// icon: an iconify icon imported above
+// tooltip: shown when hovering over the icon in an image listing
 
 export const desktops: Array<DesktopMeta> = [
   {
@@ -63,6 +78,11 @@ export const desktops: Array<DesktopMeta> = [
     tooltip: "Doesn't include any desktop environment or window manager.",
   },
 ];
+
+// feature: reference to the correct feature in the feature enum
+// icon: an iconify icon imported above
+// tooltip: shown when hovering over the icon in an image listing
+// buttonTitle: text that will be shown on the button that filters by the feature
 
 export const features: Array<FeatureMeta> = [
   {
