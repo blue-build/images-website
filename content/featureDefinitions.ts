@@ -15,7 +15,6 @@ import nvidiaIcon from "@iconify/icons-simple-icons/nvidia";
 import distroboxIcon from "@iconify/icons-simple-icons/hackthebox";
 import autoUpdateIcon from "@iconify/icons-material-symbols/cycle";
 
-
 // In both enums:
 // The value on the right is what HAS to be written the same way as in images.yml,
 // and the key on the left is the alias of it inside the typescript code (prefer smallcaps for that)
@@ -35,7 +34,6 @@ export enum Feature {
   distrobox = "distrobox",
   autoupdate = "autoupdate",
 }
-
 
 // desktop: reference to the correct desktop in the desktop enum
 // icon: an iconify icon imported above
