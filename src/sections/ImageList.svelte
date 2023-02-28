@@ -4,10 +4,6 @@
   import Checkbox from "@components/Checkbox.svelte";
 
   import Icon from "@iconify/svelte";
-  import type { IconifyIcon } from "@iconify/svelte";
-  import nvidiaIcon from "@iconify/icons-simple-icons/nvidia";
-  import distroboxIcon from "@iconify/icons-simple-icons/hackthebox";
-  import autoUpdateIcon from "@iconify/icons-material-symbols/cycle";
 
   import type { ImageFilter, Images } from "@ts/types";
   import { Feature, Desktop, features } from "@content/featureDefinitions";
