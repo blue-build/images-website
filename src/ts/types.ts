@@ -1,3 +1,6 @@
+import type { Desktop, Feature } from "@content/featureDefinitions";
+import type { IconifyIcon } from "@iconify/svelte";
+
 export interface Images {
   images: Array<Image>;
 }
@@ -17,23 +20,20 @@ export interface Edition {
   versions: Array<string> | undefined;
 }
 
-export enum Feature {
-  nvidia = "nvidia",
-  distrobox = "distrobox",
-  autoupdate = "autoupdate",
-}
-
-export enum Desktop {
-  gnome = "GNOME",
-  kde = "KDE",
-  xfce = "XFCE",
-  sway = "Sway",
-  lxqt = "LXQt",
-  mate = "MATE",
-  none = "none",
-}
-
 export interface ImageFilter {
   featureSet: Array<Feature>;
   desktop: Desktop | "";
+}
+
+export interface DesktopMeta {
+  desktop: Desktop;
+  icon: IconifyIcon;
+  tooltip: string;
+}
+
+export interface FeatureMeta {
+  feature: Feature;
+  buttonTitle: string;
+  icon: IconifyIcon;
+  tooltip: string;
 }

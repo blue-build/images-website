@@ -10,7 +10,7 @@
   import autoUpdateIcon from "@iconify/icons-material-symbols/cycle";
 
   import type { ImageFilter, Images } from "@ts/types";
-  import { Feature, Desktop } from "@ts/types";
+  import { Feature, Desktop, features } from "@content/featureDefinitions";
 
   import imagesUntyped from "@content/images.yml";
   const images: Images = imagesUntyped;
@@ -30,33 +30,10 @@
     featureSet: [],
     desktop: "",
   };
-
-  interface FeatureButton {
-    text: string;
-    feature: Feature;
-    icon: IconifyIcon;
-  }
-  const featureButtons: Array<FeatureButton> = [
-    {
-      text: "Nvidia",
-      feature: Feature.nvidia,
-      icon: nvidiaIcon,
-    },
-    {
-      text: "Distrobox",
-      feature: Feature.distrobox,
-      icon: distroboxIcon,
-    },
-    {
-      text: "Automatic updates",
-      feature: Feature.autoupdate,
-      icon: autoUpdateIcon,
-    },
-  ];
 </script>
 
 <div
-  class="flex max-w-3xl flex-row gap-2 border-4 border-indigo-900 dark:bg-gray-900 dark:border-indigo-700 bg-indigo-100 p-3"
+  class="flex max-w-3xl flex-row gap-2 border-4 border-indigo-900 bg-indigo-100 p-3 dark:border-indigo-700 dark:bg-gray-900"
 >
   <Box
     class={`${
@@ -67,7 +44,7 @@
   >
     <label for="de">Desktop:</label>
     <select
-      class="bg-transparent text-center cursor-pointer"
+      class="cursor-pointer bg-transparent text-center"
       id="de"
       bind:value={filter.desktop}
     >
@@ -78,22 +55,23 @@
     </select>
   </Box>
 
-  {#each featureButtons as fb}
+  {#each features as feature}
     <Checkbox
       change={(e) => {
         if (e.target?.checked) {
-          filter.featureSet = [...filter.featureSet, fb.feature];
+          filter.featureSet = [...filter.featureSet, feature.feature];
         } else {
-          filter.featureSet = filter.featureSet.filter((f) => f !== fb.feature);
+          filter.featureSet = filter.featureSet.filter(
+            (f) => f !== feature.feature
+          );
         }
-        console.log(fb.feature);
       }}
     >
       <Box
         class="flex flex-row gap-2 outline-2 group-[.isChecked]:bg-indigo-300 group-[.isChecked]:outline group-[.isChecked]:outline-indigo-500 group-[.isChecked]:hover:outline-indigo-400"
       >
-        <Icon icon={fb.icon} class="self-center" />
-        {fb.text}
+        <Icon icon={feature.icon} class="self-center" />
+        {feature.buttonTitle}
       </Box>
     </Checkbox>
   {/each}

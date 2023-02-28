@@ -1,6 +1,11 @@
 <script lang="ts">
   import type { Edition, Image } from "@ts/types";
-  import { Feature, Desktop } from "@ts/types";
+  import {
+    Feature,
+    Desktop,
+    desktops,
+    features,
+  } from "@content/featureDefinitions";
 
   import Icon from "@iconify/svelte";
   import type { IconifyIcon } from "@iconify/svelte";
@@ -24,58 +29,23 @@
     tooltip: string;
   }
 
-  const icons: Array<IconData> = [
-    {
-      condition: edition.desktop === Desktop.gnome,
-      icon: gnomeIcon,
-      tooltip: "Uses GNOME by default.",
-    },
-    {
-      condition: edition.desktop === Desktop.kde,
-      icon: kdeIcon,
-      tooltip: "Uses KDE Plasma by default.",
-    },
-    {
-      condition: edition.desktop === Desktop.xfce,
-      icon: xfceIcon,
-      tooltip: "Uses XFCE by default.",
-    },
-    {
-      condition: edition.desktop === Desktop.sway,
-      icon: genericWmIcon,
-      tooltip: "Uses SwayWM by default.",
-    },
-    {
-      condition: edition.desktop === Desktop.lxqt,
-      icon: genericDeIcon,
-      tooltip: "Uses LXQt by default.",
-    },
-    {
-      condition: edition.desktop === Desktop.mate,
-      icon: genericDeIcon,
-      tooltip: "Uses MATE by default.",
-    },
-    {
-      condition: edition.desktop === Desktop.none,
-      icon: noDeIcon,
-      tooltip: "Doesn't include any desktop environment or window manager.",
-    },
-    {
-      condition: image.featureSet.includes(Feature.nvidia),
-      icon: nvidiaIcon,
-      tooltip: "Includes Nvidia drivers.",
-    },
-    {
-      condition: image.featureSet.includes(Feature.distrobox),
-      icon: distroboxIcon,
-      tooltip: "Includes distrobox.",
-    },
-    {
-      condition: image.featureSet.includes(Feature.autoupdate),
-      icon: autoUpdateIcon,
-      tooltip: "Includes automatic updates.",
-    },
-  ];
+  const icons: Array<IconData> = [];
+
+  desktops.forEach((desktop) => {
+    icons.push({
+      condition: edition.desktop === desktop.desktop,
+      icon: desktop.icon,
+      tooltip: desktop.tooltip,
+    });
+  });
+
+  features.forEach((feature) => {
+    icons.push({
+      condition: image.featureSet.includes(feature.feature),
+      icon: feature.icon,
+      tooltip: feature.tooltip,
+    });
+  });
 </script>
 
 <div class="mt-4 mb-2 flex gap-2 pl-2">
