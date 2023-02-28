@@ -75,7 +75,7 @@
 
       <button
         title="Copy rebase command to clipboard."
-        class="relative top-1 ml-2 mr-1 inline before:absolute before:right-0 before:-top-9 before:text-gray-900 dark:before:text-white focus:before:content-['copied!']"
+        class="relative top-1 ml-2 mr-1 inline before:absolute before:right-0 before:-top-9 before:text-gray-900 focus:before:content-['copied!'] dark:before:text-white"
         on:click={copyRebaseCommand}><Icon icon={copyIcon} width="16" /></button
       >
     </span>
