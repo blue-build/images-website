@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/svelte": "^2.0.2",
     "@astrojs/tailwind": "^3.0.1",
+    "@astrolib/seo": "^0.3.0",
     "@rollup/plugin-yaml": "^4.0.1",
     "astro": "^2.0.14",
     "svelte": "^3.54.0",

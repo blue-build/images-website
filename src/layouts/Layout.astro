@@ -1,9 +1,13 @@
 ---
+import { AstroSeo } from "@astrolib/seo"; // https://github.com/onwidget/astrolib/tree/main/packages/seo
+
 export interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+const description = `This is a collection of container images using Fedora's support for OCI/Docker containers as a transport and delivery mechanism for operating system content.
+  This project's purpose is to be a &quot;kit&quot; for you to derive from to create your perfect image as well as provide high quality images for use as a desktop`;
 ---
 
 <!DOCTYPE html>
@@ -13,7 +17,18 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+
+    <AstroSeo
+      title={title}
+      description={description}
+      canonical={"https://ublue-images-demo.netlify.app"}
+      openGraph={{
+        url: "https:ublue-images-demo.netlify.app",
+        title: title,
+        description: description,
+        site_name: "Ublue",
+      }}
+    />
   </head>
   <body>
     <slot />
