@@ -1,6 +1,6 @@
-# Ublue website
+# Ublue images website
 
-This page is
+This page is [currently a demo version of] an image picker for images built by the ublue-os project, and possibly in the future a whole custom frontpage.
 
 ## Contributing
 
@@ -15,7 +15,9 @@ All of the documentation needed to contribute to `images.yml` live in the docume
 
 ## Development
 
-This website is built using Astro, Svelte, Typescript and TailwindCSS. Some useful commands for this project are declared in the justfile and can be used with the just command runner. This project uses pnpm instead of npm for its superior speed and effiency.
+This website is built using Astro, Svelte, Typescript, TailwindCSS and Prettier. Some useful commands for this project are declared in the justfile and can be used with the just command runner. This project uses pnpm instead of npm for its superior speed and effiency.
+
+### Rationale
 
 #### Why Typescript and TailwindCSS?
 
@@ -29,3 +31,12 @@ Astro provides a good foundation for building statically generated (and server r
 #### Why Svelte?
 
 Svelte (IMO) is a breeze to work with. The reactivity is effortless and the syntax on top of standard HTML is pretty minimal and elegant. HAving a JS framework was basically necessary to have a functioning filtering system without making total spaghetti code, so Svelte was the obvious choice.
+
+#### Why prettier?
+
+Prettier is an opionated code formatter which enables consistency and best practices in formatting. And it just happens to support everything this project is based on.
+
+#### Why not MkDocs?
+
+_For the joys of modern typescript-based web development._
+AKA. because I'm not familiar with it, and this toolkit allows a more _custom_ approach to web dev, basically enabling the use of all of the technologies mentioned above.
