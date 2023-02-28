@@ -29,6 +29,12 @@ To get started, you only need to install `pnpm` and optionally `just`.
 
 Once you've made some changes, run `just fmt` (runs the command `pnpm prettier --write . --plugin-search-dir=.`) to format the files accordingly. If this formats some files you didn't touch, commit the changes with a message like `style: prettier fmt`.
 
+### Conventional Commits
+
+- Commits which only change the data in `images.yml` should be tagged with `docs:`
+- Commits which only change the styling of the page and don't necessarily add new features should be tagged with `feat(styling):`
+- Commits which only change the developer experience should be tagged with `feat(dx):` or `refactor:`
+
 ### Rationale
 
 #### Why Typescript and TailwindCSS?
