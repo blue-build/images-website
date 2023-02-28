@@ -6,7 +6,7 @@
   import Icon from "@iconify/svelte";
 
   import type { ImageFilter, Images } from "@ts/types";
-  import { Feature, Desktop, features } from "@content/featureDefinitions";
+  import { Desktop, features } from "@content/featureDefinitions";
 
   import imagesUntyped from "@content/images.yml";
   const images: Images = imagesUntyped;
