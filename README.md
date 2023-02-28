@@ -49,7 +49,7 @@ Astro provides a good foundation for building statically generated (and server r
 
 #### Why Svelte?
 
-Svelte (IMO) is a breeze to work with. The reactivity is effortless and the syntax on top of standard HTML is pretty minimal and elegant. HAving a JS framework was basically necessary to have a functioning filtering system without making total spaghetti code, so Svelte was the obvious choice.
+Svelte (IMO) is a breeze to work with. The reactivity is effortless and the syntax on top of standard HTML is pretty minimal and elegant. Having a JS framework was basically necessary to have a functioning filtering system without making total spaghetti code, so Svelte was the obvious choice.
 
 #### Why prettier?
 
