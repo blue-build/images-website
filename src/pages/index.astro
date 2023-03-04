@@ -21,10 +21,8 @@ import ImageList from "@sections/ImageList.svelte";
 
 <Layout title="UblueOS image listing">
   <main>
-    <div class="min-h-screen p-4 dark:bg-gray-900">
-      <DarkModeButton client:idle />
-      <Hero />
-      <ImageList client:load />
-    </div>
+    <Hero />
+    <ImageList client:load />
+    <DarkModeButton client:idle />
   </main>
 </Layout>

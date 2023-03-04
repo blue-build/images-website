@@ -28,53 +28,55 @@
   };
 </script>
 
-<div
-  class="flex max-w-3xl flex-row gap-2 border-4 border-indigo-900 bg-indigo-100 p-3 dark:border-indigo-700 dark:bg-gray-900"
->
-  <Box
-    class={`${
-      filter.desktop !== ""
-        ? "bg-indigo-300 outline outline-indigo-500 hover:outline-indigo-400"
-        : ""
-    }`}
+<div class="min-h-screen p-4 dark:bg-gray-900">
+  <div
+    class="flex max-w-3xl flex-row gap-2 border-4 border-indigo-900 bg-indigo-100 p-3 dark:border-indigo-700 dark:bg-gray-900"
   >
-    <label for="de">Desktop:</label>
-    <select
-      class="cursor-pointer bg-transparent text-center"
-      id="de"
-      bind:value={filter.desktop}
+    <Box
+      class={`${
+        filter.desktop !== ""
+          ? "bg-indigo-300 outline outline-indigo-500 hover:outline-indigo-400"
+          : ""
+      }`}
     >
-      <option class="text-black" value="" selected>-</option>
-      {#each Object.values(Desktop) as d}
-        <option class="text-black" value={d}>{d}</option>
-      {/each}
-    </select>
-  </Box>
-
-  {#each features as feature}
-    <Checkbox
-      change={(e) => {
-        if (e.target?.checked) {
-          filter.featureSet = [...filter.featureSet, feature.feature];
-        } else {
-          filter.featureSet = filter.featureSet.filter(
-            (f) => f !== feature.feature
-          );
-        }
-      }}
-    >
-      <Box
-        class="flex flex-row gap-2 outline-2 group-[.isChecked]:bg-indigo-300 group-[.isChecked]:outline group-[.isChecked]:outline-indigo-500 group-[.isChecked]:hover:outline-indigo-400"
+      <label for="de">Desktop:</label>
+      <select
+        class="cursor-pointer bg-transparent text-center"
+        id="de"
+        bind:value={filter.desktop}
       >
-        <Icon icon={feature.icon} class="self-center" />
-        {feature.buttonTitle}
-      </Box>
-    </Checkbox>
-  {/each}
-</div>
+        <option class="text-black" value="" selected>-</option>
+        {#each Object.values(Desktop) as d}
+          <option class="text-black" value={d}>{d}</option>
+        {/each}
+      </select>
+    </Box>
 
-<div class="m-2 flex w-max flex-col gap-4 p-4">
-  {#each filteredImages as image}
-    <ImageCard {image} {filter} />
-  {/each}
+    {#each features as feature}
+      <Checkbox
+        change={(e) => {
+          if (e.target?.checked) {
+            filter.featureSet = [...filter.featureSet, feature.feature];
+          } else {
+            filter.featureSet = filter.featureSet.filter(
+              (f) => f !== feature.feature
+            );
+          }
+        }}
+      >
+        <Box
+          class="flex flex-row gap-2 outline-2 group-[.isChecked]:bg-indigo-300 group-[.isChecked]:outline group-[.isChecked]:outline-indigo-500 group-[.isChecked]:hover:outline-indigo-400"
+        >
+          <Icon icon={feature.icon} class="self-center" />
+          {feature.buttonTitle}
+        </Box>
+      </Checkbox>
+    {/each}
+  </div>
+
+  <div class="m-2 flex w-max flex-col gap-4 p-4">
+    {#each filteredImages as image}
+      <ImageCard {image} {filter} />
+    {/each}
+  </div>
 </div>
