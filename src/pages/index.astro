@@ -1,6 +1,7 @@
 ---
-import DarkModeButton from "@components/DarkModeButton.svelte";
 import Layout from "@layouts/Layout.astro";
+import DarkModeButton from "@components/DarkModeButton.svelte";
+import Hero from "@sections/Hero.astro";
 import ImageList from "@sections/ImageList.svelte";
 ---
 
@@ -22,6 +23,7 @@ import ImageList from "@sections/ImageList.svelte";
   <main>
     <div class="min-h-screen p-4 dark:bg-gray-900">
       <DarkModeButton client:idle />
+      <Hero />
       <ImageList client:load />
     </div>
   </main>
