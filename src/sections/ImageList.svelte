@@ -30,7 +30,7 @@
 
 <div class="min-h-screen p-4 dark:bg-gray-900" id="images">
   <div
-    class="flex max-w-5xl flex-row gap-2 border-4 border-indigo-900 bg-indigo-100 p-3 dark:border-indigo-700 dark:bg-gray-900 mx-auto"
+    class="mx-auto flex max-w-5xl flex-row gap-2 border-4 border-indigo-900 bg-indigo-100 p-3 dark:border-indigo-700 dark:bg-gray-900"
   >
     <Box
       class={`${
@@ -74,7 +74,7 @@
     {/each}
   </div>
 
-  <div class="m-2 mt-6 flex w-max flex-col gap-6 p-4 mx-auto">
+  <div class="m-2 mx-auto mt-6 flex w-max flex-col gap-6 p-4">
     {#each filteredImages as image}
       <ImageCard {image} {filter} />
     {/each}
