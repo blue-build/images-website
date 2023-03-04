@@ -3,6 +3,7 @@ import { Content, frontmatter } from "@content/hero.md";
 
 import Box from "@components/Box.svelte";
 import Icon from "@iconify/svelte";
+import imagesArrow from "@iconify/icons-material-symbols/arrow-upward-sharp";
 import linkArrow from "@iconify/icons-material-symbols/arrow-outward";
 ---
 
@@ -18,7 +19,9 @@ import linkArrow from "@iconify/icons-material-symbols/arrow-outward";
     </span>
     <div class="flex flex-row gap-4 text-lg">
       <a href="#images">
-        <Box client:idle>Browse the images</Box>
+        <Box client:idle class="flex flex-row gap-2">
+          Browse the images <Icon icon={imagesArrow} width="18" rotate="2" />
+        </Box>
       </a>
       <a href="https://ublue.it/">
         <Box client:idle class="flex flex-row gap-2">
