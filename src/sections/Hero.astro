@@ -1,4 +1,6 @@
 ---
+import { Content, frontmatter } from "@content/hero.md";
+
 import Box from "@components/Box.svelte";
 import Icon from "@iconify/svelte";
 import linkArrow from "@iconify/icons-material-symbols/arrow-outward";
@@ -9,24 +11,11 @@ import linkArrow from "@iconify/icons-material-symbols/arrow-outward";
 >
   <div class="flex max-w-3xl flex-col gap-5 place-self-center">
     <h1 class="max-w-2xl text-5xl text-indigo-900 dark:text-indigo-300">
-      Custom Operating System images based on Fedora
+      {frontmatter.title}
     </h1>
-    <p class="text-xl dark:text-white">
-      This is a collection of container images using Fedora's support for
-      OCI/Docker containers as a
-
-      <a
-        class="text-blue-900 hover:underline dark:text-blue-400"
-        href="https://fedoraproject.org/wiki/Changes/OstreeNativeContainerStable"
-      >
-        transport and delivery mechanism for operating system content
-      </a>. That's nerdspeak for the ultimate Linux client:
-      <em class="font-medium">
-        the reliability of a Chromebook, but with the flexibility and power of a
-        traditional Linux desktop.
-      </em>
-      At long last, we've ascended.
-    </p>
+    <span class="text text-xl dark:text-white">
+      <Content />
+    </span>
     <div class="flex flex-row gap-4 text-lg">
       <a href="#images">
         <Box client:idle>Browse the images</Box>
@@ -39,3 +28,13 @@ import linkArrow from "@iconify/icons-material-symbols/arrow-outward";
     </div>
   </div>
 </div>
+
+<!-- Style has to be global to affect the links inside the content component -->
+<style is:global>
+  .text a {
+    @apply text-blue-900 hover:underline dark:text-blue-400;
+  }
+  .text em {
+    @apply font-medium;
+  }
+</style>
