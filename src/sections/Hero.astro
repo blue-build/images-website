@@ -1,3 +1,9 @@
+---
+import Box from "@components/Box.svelte";
+import Icon from "@iconify/svelte";
+import linkArrow from "@iconify/icons-material-symbols/arrow-outward";
+---
+
 <div
   class="flex place-content-center h-screen w-screen bg-gradient-to-b from-indigo-400 dark:from-indigo-900 dark:to-gray-900"
 >
@@ -21,5 +27,15 @@
       </em>
       At long last, we've ascended.
     </p>
+    <div class="flex flex-row gap-4 text-lg">
+      <a href="#images">
+        <Box client:idle>Browse the images</Box>
+      </a>
+      <a href="https://ublue.it/">
+        <Box client:idle class="flex flex-row gap-2">
+          Read the docs <Icon icon={linkArrow} width="18" />
+        </Box>
+      </a>
+    </div>
   </div>
 </div>
