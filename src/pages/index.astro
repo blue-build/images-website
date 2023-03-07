@@ -12,15 +12,14 @@ import ImageList from "@sections/ImageList.svelte";
     darkModeStore.set(true);
   }
 
-  let main = document.querySelector("main");
   darkModeStore.subscribe((d) => {
-    if (d) main.classList.add("dark");
-    else main.classList.remove("dark");
+    if (d) document.documentElement.classList.add("dark");
+    else document.documentElement.classList.remove("dark");
   });
 </script>
 
 <Layout title="UblueOS image listing">
-  <main>
+  <main class="dark:bg-gray-900">
     <Hero />
     <ImageList client:load />
     <DarkModeButton client:idle />
