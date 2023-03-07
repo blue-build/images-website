@@ -94,7 +94,7 @@ images:
 
   - name: B${edition.name}
     creator: uBlue
-    featureSet: [nvidia, distrobox]
+    featureSet: [nvidia, distrobox, autoupdate, udev]
     editions:
       # having a capitalized pretty name and an uri
       # by doing it like this is kind of a hack lol but it works
@@ -110,7 +110,7 @@ images:
 
   - name: Ubuntu
     creator: uBlue
-    featureSet: [distrobox]
+    featureSet: [distrobox, autoupdate, udev]
     editions:
       - name: ubuntu
         desktop: GNOME
