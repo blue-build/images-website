@@ -20,12 +20,17 @@ import linkArrow from "@iconify/icons-material-symbols/arrow-outward";
     <div class="flex flex-row gap-4 text-lg">
       <a href="#images">
         <Box client:idle class="flex flex-row gap-2">
-          Browse the images <Icon icon={imagesArrow} width="18" rotate="2" />
+          Browse the images <Icon
+            icon={imagesArrow}
+            width="18"
+            rotate="2"
+            client:load
+          />
         </Box>
       </a>
       <a href="https://ublue.it/">
         <Box client:idle class="flex flex-row gap-2">
-          Read the docs <Icon icon={linkArrow} width="18" />
+          Read the docs <Icon icon={linkArrow} width="18" client:load />
         </Box>
       </a>
     </div>
