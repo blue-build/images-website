@@ -14,6 +14,7 @@ import noDeIcon from "@iconify/icons-material-symbols/close-rounded";
 import nvidiaIcon from "@iconify/icons-simple-icons/nvidia";
 import distroboxIcon from "@iconify/icons-simple-icons/hackthebox";
 import autoUpdateIcon from "@iconify/icons-material-symbols/cycle";
+import udevRulesIcon from '@iconify/icons-ph/game-controller';
 
 // In both enums:
 // The value on the right is what HAS to be written the same way as in images.yml,
@@ -33,6 +34,7 @@ export enum Feature {
   nvidia = "nvidia",
   distrobox = "distrobox",
   autoupdate = "autoupdate",
+  udev = "udev",
 }
 
 // desktop: reference to the correct desktop in the desktop enum
@@ -100,5 +102,11 @@ export const features: Array<FeatureMeta> = [
     icon: autoUpdateIcon,
     tooltip: "Includes automatic updates.",
     buttonTitle: "Automatic updates",
+  },
+  {
+    feature: Feature.udev,
+    icon: udevRulesIcon,
+    tooltip: "Includes udev support for devices such as many game controllers, Yubikeys and OpenRGB.",
+    buttonTitle: "Udev rules",
   },
 ];
