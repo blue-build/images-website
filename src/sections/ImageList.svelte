@@ -74,7 +74,7 @@
     {/each}
   </div>
 
-  <div class="m-2 mx-auto mt-6 flex w-max flex-col gap-6 p-4">
+  <div class="m-2 mx-auto mt-6 flex w-max max-w-full flex-col gap-6 p-4">
     {#each filteredImages as image}
       <ImageCard {image} {filter} />
     {/each}
