@@ -14,7 +14,7 @@ import noDeIcon from "@iconify/icons-material-symbols/close-rounded";
 import nvidiaIcon from "@iconify/icons-simple-icons/nvidia";
 import distroboxIcon from "@iconify/icons-simple-icons/hackthebox";
 import autoUpdateIcon from "@iconify/icons-material-symbols/cycle";
-import udevRulesIcon from '@iconify/icons-ph/game-controller';
+import udevRulesIcon from "@iconify/icons-ph/game-controller";
 
 // In both enums:
 // The value on the right is what HAS to be written the same way as in images.yml,
@@ -106,7 +106,8 @@ export const features: Array<FeatureMeta> = [
   {
     feature: Feature.udev,
     icon: udevRulesIcon,
-    tooltip: "Includes udev support for devices such as many game controllers, Yubikeys and OpenRGB.",
+    tooltip:
+      "Includes udev support for devices such as many game controllers, Yubikeys and OpenRGB.",
     buttonTitle: "Udev rules",
   },
 ];
