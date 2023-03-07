@@ -23,12 +23,11 @@
     return true;
   });
 
-  let githubRepo: Object;
+  let githubRepo: Object | undefined;
 
   onMount(async () => {
-    githubRepo = await getGithubRepository(image.githubRepo).then(
-      (data) => data
-    );
+    githubRepo = await getGithubRepository(image.githubRepo);
+    if (githubRepo["html_url"] == undefined) githubRepo = undefined;
   });
 </script>
 
