@@ -5,7 +5,7 @@ images:
   # Example single-edition image with explanations:
 
   # - name: MyOstree # the name to be shown in the image list, has access to the edition object using javascript template syntax
-  #   creator: ublue # if it's under the ublue org, the creator should be ublue, otherwise you're free to use whatever name
+  #   creator: uBlue # if it's under the ublue org, the creator should be ublue, otherwise you're free to use whatever name
   #   featureSet: [nvidia, distrobox, autoupdate] # the feature names should be self-explanatory, this list will be updated to match all supported features
   #   editions:
   #     - name: MyOstree # this is not used anywhere unless defined in the name or imageUrl parameter
@@ -31,20 +31,39 @@ images:
   #   imageUrl: ghcr.io/alice/alicelinux-${edition.name}-${edition.desktop}
   #   githubRepo: alice/alicelinux
 
-  - name: base
-    creator: ublue
-    featureSet: [distrobox, autoupdate]
+  - name: ${edition.name}-main
+    creator: uBlue
+    featureSet: [distrobox, autoupdate, udev]
     editions:
-      - name: base
+      - name: silverblue
         desktop: GNOME
-        description: "Base image: Silverblue with unfiltered Flathub, distrobox, and automatic updates"
+        description: Vanilla Fedora Silverblue with uBlue QoL.
+      - name: kinoite
+        desktop: KDE
+        description: Vanilla Fedora Kinoite with uBlue QoL.
+      - name: vauxite
+        desktop: XFCE
+        description: Vanilla Fedora Vauxite with uBlue QoL.
+      - name: sericea
+        desktop: Sway
+        description: Vanilla Fedora Sericea with uBlue QoL.
+        versions: ["38"] # there's no F37 version of sericea
+      - name: lxqt
+        desktop: LXQt
+        description: A custom Fedora Ostree build with LXQt and uBlue QoL.
+      - name: mate
+        desktop: MATE
+        description: A custom Fedora Ostree build with MATE and uBlue QoL.
+      - name: base
+        desktop: none
+        description: Vanilla Fedora ostree base with uBlue QoL.
     versions: ["latest", "37", "38"]
-    imageUrl: ghcr.io/ublue-os/base
-    githubRepo: ublue-os/base
+    imageUrl: ghcr.io/ublue-os/${edition.name}-main
+    githubRepo: ublue-os/main
 
   - name: ${edition.name}-nvidia
-    creator: ublue
-    featureSet: [nvidia]
+    creator: uBlue
+    featureSet: [nvidia, distrobox, autoupdate, udev]
     editions:
       - name: silverblue
         desktop: GNOME
@@ -59,6 +78,12 @@ images:
         desktop: Sway
         description: Vanilla Fedora Sericea with Nvidia drivers.
         versions: ["38-current", "38-525"] # there's no F37 version of sericea
+      - name: lxqt
+        desktop: LXQt
+        description: A custom Fedora Ostree build with LXQt and Nvidia drivers.
+      - name: mate
+        desktop: MATE
+        description: A custom Fedora Ostree build with MATE and Nvidia drivers.
       - name: base
         desktop: none
         description: Vanilla Fedora ostree base with Nvidia drivers.
@@ -68,7 +93,7 @@ images:
     githubRepo: ublue-os/nvidia
 
   - name: B${edition.name}
-    creator: ublue
+    creator: uBlue
     featureSet: [nvidia, distrobox]
     editions:
       # having a capitalized pretty name and an uri
@@ -84,7 +109,7 @@ images:
     githubRepo: ublue-os/bazzite
 
   - name: Ubuntu
-    creator: ublue
+    creator: uBlue
     featureSet: [distrobox]
     editions:
       - name: ubuntu
@@ -93,36 +118,3 @@ images:
     versions: ["latest", "37"]
     imageUrl: ghcr.io/ublue-os/ubuntu
     githubRepo: ublue-os/ubuntu
-
-  - name: vauxite
-    creator: ublue
-    featureSet: []
-    editions:
-      - name: vauxite
-        desktop: XFCE
-        description: "Immutable Fedora-based Xfce desktop. Note: this image has slightly more addons than the fedora-built image at https://quay.io/repository/fedora-ostree-desktops/vauxites."
-    versions: ["latest"]
-    imageUrl: ghcr.io/ublue-os/vauxite
-    githubRepo: ublue-os/vauxite
-
-  - name: lxqt
-    creator: ublue
-    featureSet: []
-    editions:
-      - name: lxqt
-        desktop: LXQt
-        description: Immutable Fedora-based LXQt desktop container image
-    versions: ["latest"]
-    imageUrl: ghcr.io/ublue-os/lxqt
-    githubRepo: ublue-os/lxqt
-
-  - name: mate
-    creator: ublue
-    featureSet: []
-    editions:
-      - name: mate
-        desktop: MATE
-        description: Immutable Fedora-based MATE Desktop container image
-    versions: ["latest"]
-    imageUrl: ghcr.io/ublue-os/mate
-    githubRepo: ublue-os/mate
