@@ -30,7 +30,7 @@
 
 <div class="min-h-screen p-4 dark:bg-gray-900" id="images">
   <div
-    class="mx-auto flex max-w-5xl flex-row gap-2 border-4 border-indigo-900 bg-indigo-100 p-3 dark:border-indigo-700 dark:bg-gray-900"
+    class="mx-auto flex flex-wrap  max-w-5xl flex-row gap-2 border-4 border-indigo-900 bg-indigo-100 p-3 dark:border-indigo-700 dark:bg-gray-900"
   >
     <Box
       class={`${
