@@ -19,7 +19,7 @@
 </script>
 
 <button on:click={switchMode} class={`ml-auto ${$$props.class}`}>
-  <Box>
+  <Box class="p-2">
     <Icon icon={currentIcon} />
   </Box>
 </button>
