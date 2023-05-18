@@ -1,5 +1,5 @@
 <script>
-  import EditionCard from "./EditionCard.svelte";
+  import EditionCard from "@components/EditionCard.svelte";
 </script>
 
 <div
