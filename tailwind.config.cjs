@@ -7,6 +7,10 @@ module.exports = {
       boxShadow: {
         ubrut:
           "0.25rem 0.25rem 0px 0px rgb(var(--color-bg-secondary) / var(--tw-bg-opacity))",
+        "ubrut-sm":
+          "0.1rem 0.1rem 0px 0px rgb(var(--color-bg-secondary) / var(--tw-bg-opacity))",
+        "ubrut-lg":
+          "0.5rem 0.5rem 0px 0px rgb(var(--color-bg-secondary) / var(--tw-bg-opacity))",
       },
       colors: {
         // Using modern `rgb`
