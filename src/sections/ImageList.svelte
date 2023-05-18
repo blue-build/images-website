@@ -30,14 +30,14 @@
 
 <div class="min-h-screen p-4" id="images">
   <div
-    class="mx-auto flex max-w-5xl  flex-row flex-wrap gap-2 border-4 border-indigo-900 bg-indigo-100 p-3 dark:border-indigo-700 dark:bg-gray-900"
+    class="mx-auto flex max-w-5xl flex-row flex-wrap gap-2 border-4 border-indigo-900 bg-indigo-100 p-3 dark:border-indigo-700 dark:bg-gray-900"
   >
     <Box
       class={`${
         filter.desktop !== ""
           ? "bg-indigo-300 outline outline-indigo-500 hover:outline-indigo-400"
           : ""
-      }`}
+      } p-2`}
     >
       <label for="de">Desktop:</label>
       <select
@@ -65,7 +65,7 @@
         }}
       >
         <Box
-          class="flex flex-row gap-2 outline-2 group-[.isChecked]:bg-indigo-300 group-[.isChecked]:outline group-[.isChecked]:outline-indigo-500 group-[.isChecked]:hover:outline-indigo-400"
+          class="p-2 flex flex-row gap-2 outline-2 group-[.isChecked]:bg-indigo-300 group-[.isChecked]:outline group-[.isChecked]:outline-indigo-500 group-[.isChecked]:hover:outline-indigo-400"
         >
           <Icon icon={feature.icon} class="self-center" />
           {feature.buttonTitle}

@@ -34,7 +34,7 @@
 <div class="flex w-fit flex-col gap-2 p-1">
   <!-- Odd comments and newline placing is to prevent extra whitespace -->
   <span>Rebase to this image:</span>
-  <Box dark class="m-1 font-mono text-sm">
+  <Box dark class="p-2 m-1 font-mono text-sm">
     rpm-ostree <wbr />rebase <wbr />ostree-unverified-registry<wbr
     /><!--  
 
@@ -59,7 +59,7 @@
         bind:this={dropdown}
         class="absolute box-content flex hidden flex-col gap-2 group-hover:flex"
       >
-        <Box dark class="mt-1">
+        <Box dark class="p-2 mt-1">
           {#each versions as v}
             {#if v !== selectedVersion}
               <button
