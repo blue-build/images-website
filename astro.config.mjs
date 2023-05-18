@@ -9,7 +9,12 @@ import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), svelte()],
+  integrations: [
+    tailwind({
+      config: { applyBaseStyles: false },
+    }),
+    svelte(),
+  ],
   vite: {
     plugins: [yaml()],
   },

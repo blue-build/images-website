@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-fg-primary: 16 23 61;
+    --color-fg-secondary: 79 93 161;
+    --color-bg-page: 255 255 255;
+    --color-bg-primary: 176 207 249;
+    --color-bg-secondary: 39 66 202;
+  }
+}
