@@ -10,4 +10,11 @@
     --color-bg-primary: 176 207 249;
     --color-bg-secondary: 39 66 202;
   }
+  :root.dark {
+    --color-fg-primary: 255 255 255;
+    --color-fg-secondary: 176 207 249;
+    --color-bg-page: 16 23 61;
+    --color-bg-primary: 79 93 161;
+    --color-bg-secondary: var(--color-fg-secondary);
+  }
 }
