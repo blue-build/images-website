@@ -1,8 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import DarkModeButton from "@components/DarkModeButton.svelte";
-import PullStats from "@sections/PullStats.svelte";
-import Hero from "@sections/Hero.astro";
+import ImageChooser from "@components/ImageChooser.svelte";
 ---
 
 <script>
@@ -19,7 +18,8 @@ import Hero from "@sections/Hero.astro";
 </script>
 
 <Layout title="Universal Blue | Fedora Native Containers Images">
-  <main class="dark:bg-gray-900">
+  <main class="dark:bg-gray-900 w-screen h-full min-h-screen">
+    <ImageChooser />
     <DarkModeButton client:idle />
   </main>
 </Layout>
