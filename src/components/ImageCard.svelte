@@ -65,7 +65,7 @@
     <span>{image.creator}</span>
     <IconList {image} {edition} />
     <Box
-      class="ml-2 mt-3 mb-4 max-w-xl outline-gray-100 hover:outline-gray-100"
+      class="p-2 ml-2 mt-3 mb-4 max-w-xl outline-gray-100 hover:outline-gray-100"
     >
       {edition.description}
     </Box>
