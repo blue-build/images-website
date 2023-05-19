@@ -1,6 +1,6 @@
 # Ublue images website
 
-This page is [currently a demo version of] an image picker for images built by the ublue-os project, and possibly in the future a whole custom frontpage.
+This page is [(currently a demo version of)](https://ublue-images-demo.netlify.app/) an image picker for images built by the ublue-os project, and possibly in the future a whole custom frontpage.
 
 ## Contributing
 
