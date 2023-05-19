@@ -13,11 +13,24 @@
       return statEntries.map((d) => d[1][img]);
     };
 
+    const totalForDate = (date: string) => {
+      return Object.entries(stats[date]).reduce(
+        (acc, curr) => acc + curr[1],
+        0
+      );
+    };
+
     const datasets = images.map((img) => {
       return {
         label: img,
         data: imageData(img),
       };
+    });
+
+    datasets.push({
+      type: "bar",
+      label: "total",
+      data: dates.map((date) => totalForDate(date)),
     });
 
     new Chart(document.getElementById("pulls"), {
