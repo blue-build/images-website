@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import DarkModeButton from "@components/DarkModeButton.svelte";
 import PullStats from "@sections/PullStats.svelte";
+import Hero from "@sections/Hero.astro";
 ---
 
 <script>
@@ -19,6 +20,7 @@ import PullStats from "@sections/PullStats.svelte";
 
 <Layout title="Universal Blue | Fedora Native Containers Images">
   <main class="dark:bg-gray-900 min-h-screen">
+    <Hero />
     <PullStats client:idle />
     <DarkModeButton client:idle />
   </main>

@@ -51,6 +51,6 @@
   });
 </script>
 
-<div class="w-full h-full">
+<div id="stats" class="w-full h-full p-8">
   <canvas id="pulls" />
 </div>
