@@ -14,7 +14,7 @@
 </script>
 
 <!-- todo bind inputs to variables -->
-<div id="nvidia" class="w-full max-w-4xl mx-auto p-16">
+<div id="metadata" class="w-full max-w-4xl mx-auto p-16">
   <Box class="p-8 text-xl flex gap-8">
     <form class="flex flex-col gap-4 w-3/4">
       <div>Please insert some metadata for your image.</div>
