@@ -18,10 +18,13 @@
 </script>
 
 <div id="images" class="w-full max-w-5xl mx-auto flex flex-col gap-8 p-16">
-  <div class="text-lg text-fg-primary flex flex-row items-center">
-    <div>The following image(s) were found based on your preferences:</div>
+  <div class="text-lg text-fg-primary flex flex-row items-center gap-8">
+    <div>
+      The following image(s) were found based on your preferences. <br /> If there's
+      nothing here, an image with the selected preferences is not available yet.
+    </div>
     <a href="#metadata" class="ml-auto">
-      <Box class="w-fit p-2">Continue to creating your own.</Box>
+      <Box class="w-fit p-4">Continue to creating your own.</Box>
     </a>
   </div>
   <div class="p-2 flex flex-col gap-4">
