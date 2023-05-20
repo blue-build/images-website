@@ -108,13 +108,24 @@ images:
     imageUrl: ghcr.io/ublue-os/b${edition.name}
     githubRepo: ublue-os/bazzite
 
-  - name: Ubuntu
+  - name: bluefin
     creator: uBlue
     featureSet: [distrobox, autoupdate, udev]
     editions:
-      - name: ubuntu
+      - name: bluefin
         desktop: GNOME
         description: Fedora Silverblue for Ubuntu Expatriates
-    versions: ["latest", "37"]
-    imageUrl: ghcr.io/ublue-os/ubuntu
-    githubRepo: ublue-os/ubuntu
+    versions: ["latest", "38", "37"]
+    imageUrl: ghcr.io/ublue-os/bluefin
+    githubRepo: ublue-os/bluefin
+
+  - name: bluefin-nvidia
+    creator: uBlue
+    featureSet: [nvidia, distrobox, autoupdate, udev]
+    editions:
+      - name: bluefin
+        desktop: GNOME
+        description: Fedora Silverblue for Ubuntu Expatriates
+    versions: ["latest", "38", "37"]
+    imageUrl: ghcr.io/ublue-os/bluefin
+    githubRepo: ublue-os/bluefin
