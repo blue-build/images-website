@@ -26,6 +26,7 @@ export enum Desktop {
   xfce = "XFCE",
   sway = "Sway",
   lxqt = "LXQt",
+  budgie = "Budgie",
   mate = "MATE",
   none = "none",
 }
