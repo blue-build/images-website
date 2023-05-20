@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ImageCard from "@components/ImageCard.svelte";
+  import ImageCard from "@components/ImageCard/ImageCard.svelte";
   import Box from "@components/Box.svelte";
   import Checkbox from "@components/Checkbox.svelte";
 

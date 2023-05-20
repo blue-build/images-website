@@ -7,9 +7,9 @@
   import Icon from "@iconify/svelte";
   import gitFork from "@iconify/icons-ph/git-fork-bold";
   import starRounded from "@iconify/icons-material-symbols/star-rounded";
-  import RebaseCommand from "@components/RebaseCommand.svelte";
+  import RebaseCommand from "@components/ImageCard/RebaseCommand.svelte";
   import Box from "@components/Box.svelte";
-  import IconList from "@components/IconList.svelte";
+  import IconList from "@components/ImageCard/IconList.svelte";
 
   export let image: Image;
   export let filter: ImageFilter;
@@ -32,15 +32,15 @@
 </script>
 
 {#each filteredEditions as edition}
-  <div
-    class="flex flex-col border-4 border-solid border-indigo-800 p-4 dark:border-indigo-700 dark:text-white"
-  >
+  <Box class="flex flex-col p-5">
     <div class="flex flex-row items-center gap-2">
-      <h2 class="mr-8 text-xl font-bold text-indigo-800 dark:text-indigo-600">
+      <h2 class="mr-8 text-xl font-bold text-fg-primary">
         {templateStr(image.name, { edition: edition })}
       </h2>
       {#if githubRepo}
-        <Box class="ml-auto px-2 py-[0.2rem]">
+        <Box
+          class="ml-auto px-2 py-[0.2rem] outline-bg-secondary outline-1 outline"
+        >
           <a
             href={githubRepo["html_url"]}
             class="flex items-center font-bold"
@@ -50,7 +50,7 @@
             {githubRepo["forks_count"]}
           </a>
         </Box>
-        <Box class="px-2 py-[0.2rem]">
+        <Box class="px-2 py-[0.2rem] outline-bg-secondary outline-1 outline">
           <a
             href={githubRepo["html_url"]}
             class="flex items-center font-bold"
@@ -62,13 +62,13 @@
         </Box>
       {/if}
     </div>
-    <span>{image.creator}</span>
+    <span class="text-fg-secondary">{image.creator}</span>
     <IconList {image} {edition} />
     <Box
-      class="p-2 ml-2 mt-3 mb-4 max-w-xl outline-gray-100 hover:outline-gray-100"
+      class="p-2 ml-2 mt-3 mb-4 max-w-xl outline-bg-secondary outline-1 outline"
     >
       {edition.description}
     </Box>
     <RebaseCommand {image} {edition} />
-  </div>
+  </Box>
 {/each}

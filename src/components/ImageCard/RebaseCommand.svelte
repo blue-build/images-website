@@ -34,7 +34,10 @@
 <div class="flex w-fit flex-col gap-2 p-1">
   <!-- Odd comments and newline placing is to prevent extra whitespace -->
   <span>Rebase to this image:</span>
-  <Box dark class="p-2 m-1 font-mono text-sm">
+  <Box
+    dark
+    class="p-2 m-1 font-mono text-sm outline-bg-secondary outline-1 outline"
+  >
     rpm-ostree <wbr />rebase <wbr />ostree-unverified-registry<wbr
     /><!--  
 
