@@ -42,4 +42,6 @@
 
 <Metadata />
 
-{pref?.edition.name.toLowerCase()}-{pref?.nvidia ? "nvidia" : "main"}
+<div class="h-screen">
+  {pref?.edition.name.toLowerCase()}-{pref?.nvidia ? "nvidia" : "main"}
+</div>
