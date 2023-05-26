@@ -70,3 +70,9 @@ export interface ImagePreferences {
   edition: MainEdition;
   nvidia: boolean;
 }
+
+export interface CustomImage {
+  name: string;
+  description: string;
+  baseImage: string;
+}
