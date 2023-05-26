@@ -1,11 +1,12 @@
 <script lang="ts">
   import EditionCard from "@components/ImageChooser/EditionCard.svelte";
   import FoundImage from "@components/ImageChooser/FoundImage.svelte";
+  import GithubLogin from "@components/ImageChooser/GithubLogin.svelte";
   import Metadata from "@components/ImageChooser/Metadata.svelte";
   import Nvidia from "@components/ImageChooser/Nvidia.svelte";
 
   import { imagePreferences } from "@ts/stores";
-  import type { ImagePreferences, Images } from "@ts/types";
+  import type { ImagePreferences } from "@ts/types";
   import { MainEdition } from "@ts/types";
 
   let pref: ImagePreferences;
@@ -42,6 +43,8 @@
 
 <Metadata />
 
-<div class="h-screen">
-  {pref?.edition.name.toLowerCase()}-{pref?.nvidia ? "nvidia" : "main"}
-</div>
+<hr class="w-[90vw] mx-auto my-12" />
+
+<GithubLogin />
+
+<div class="h-screen" />

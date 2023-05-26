@@ -75,4 +75,5 @@ export interface CustomImage {
   name: string;
   description: string;
   baseImage: string;
+  auth: string | undefined;
 }
