@@ -65,7 +65,6 @@
             method: "post",
             headers: { Authorization: `Bearer ${custom.auth}` },
             body: JSON.stringify({
-              organization: "test-org-66",
               name: custom.name,
               description:
                 custom.description != undefined
