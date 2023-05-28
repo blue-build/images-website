@@ -29,7 +29,8 @@
       }}
     >
       <Box
-        class={`bg-bg-primary p-4 w-32 outline outline-bg-secondary shadow-ubrut hover:shadow-ubrut-lg ${
+        border
+        class={`bg-bg-primary p-4 w-32 shadow-ubrut hover:shadow-ubrut-lg ${
           nvidia ? "outline-2 !shadow-ubrut-lg" : "outline-1"
         }`}
       >
@@ -42,7 +43,8 @@
       }}
     >
       <Box
-        class={`bg-bg-primary p-4 w-32 outline outline-bg-secondary shadow-ubrut hover:shadow-ubrut-lg ${
+        border
+        class={`bg-bg-primary p-4 w-32 shadow-ubrut hover:shadow-ubrut-lg ${
           !nvidia ? "outline-2 !shadow-ubrut-lg" : "outline-1"
         }`}
       >
