@@ -38,9 +38,7 @@
         {templateStr(image.name, { edition: edition })}
       </h2>
       {#if githubRepo}
-        <Box
-          class="ml-auto px-2 py-[0.2rem] outline-bg-secondary outline-1 outline"
-        >
+        <Box class="ml-auto px-2 py-[0.2rem]" border>
           <a
             href={githubRepo["html_url"]}
             class="flex items-center font-bold"
@@ -50,7 +48,7 @@
             {githubRepo["forks_count"]}
           </a>
         </Box>
-        <Box class="px-2 py-[0.2rem] outline-bg-secondary outline-1 outline">
+        <Box class="px-2 py-[0.2rem]" border>
           <a
             href={githubRepo["html_url"]}
             class="flex items-center font-bold"
@@ -64,9 +62,7 @@
     </div>
     <span class="text-fg-secondary">{image.creator}</span>
     <IconList {image} {edition} />
-    <Box
-      class="p-2 ml-2 mt-3 mb-4 max-w-xl outline-bg-secondary outline-1 outline"
-    >
+    <Box class="p-2 ml-2 mt-3 mb-4 max-w-xl" border>
       {edition.description}
     </Box>
     <RebaseCommand {image} {edition} />

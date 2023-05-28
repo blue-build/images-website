@@ -52,7 +52,7 @@
       <div>Custom image details:</div>
       <div class="text-lg flex flex-row gap-4 w-full">
         <label for="name" class="w-32">Name:</label>
-        <Box class="outline outline-1 outline-bg-secondary w-full">
+        <Box class="w-full" border>
           <input
             bind:value={name}
             id="name"
@@ -64,7 +64,7 @@
       </div>
       <div class="text-lg flex flex-row gap-4 w-full">
         <label for="name" class="w-32">Description:</label>
-        <Box class="outline outline-1 outline-bg-secondary w-full">
+        <Box class="w-full" border>
           <input
             bind:value={desc}
             id="description"
@@ -77,7 +77,8 @@
       <div class="text-lg flex flex-row gap-4 w-full">
         <div class="w-32">Base image:</div>
         <Box
-          class="outline outline-1 outline-bg-secondary w-full bg-transparent text-fg-primary placeholder:text-fg-secondary p-1 px-2"
+          class="w-full bg-transparent text-fg-primary placeholder:text-fg-secondary p-1 px-2"
+          border
         >
           {custom.baseImage}
         </Box>
