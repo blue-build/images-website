@@ -14,4 +14,5 @@ export const customImage = writable<CustomImage>({
   baseImage: "silverblue-main",
   auth: undefined,
   login: undefined,
+  repo: undefined,
 });
