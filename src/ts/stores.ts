@@ -13,4 +13,5 @@ export const customImage = writable<CustomImage>({
   description: "This is my personal OS image.",
   baseImage: "silverblue-main",
   auth: undefined,
+  login: undefined,
 });

@@ -1,11 +1,12 @@
 <script lang="ts">
+  import CreateRepo from "@components/ImageChooser/CreateRepo.svelte";
   import EditionCard from "@components/ImageChooser/EditionCard.svelte";
   import FoundImage from "@components/ImageChooser/FoundImage.svelte";
   import GithubLogin from "@components/ImageChooser/GithubLogin.svelte";
   import Metadata from "@components/ImageChooser/Metadata.svelte";
   import Nvidia from "@components/ImageChooser/Nvidia.svelte";
 
-  import { imagePreferences } from "@ts/stores";
+  import { imagePreferences, customImage } from "@ts/stores";
   import type { ImagePreferences } from "@ts/types";
   import { MainEdition } from "@ts/types";
 
@@ -46,5 +47,11 @@
 <hr class="w-[90vw] mx-auto my-12" />
 
 <GithubLogin />
+
+{#if $customImage.auth != undefined}
+  <hr class="w-[90vw] mx-auto my-12" />
+
+  <CreateRepo />
+{/if}
 
 <div class="h-screen" />
