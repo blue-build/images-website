@@ -37,7 +37,7 @@
 
   async function createRepo() {
     try {
-      let repo;
+      let repo: { owner: { login: string }; name: string };
       if (useTemplate) {
         const res = await fetch(
           `https://api.github.com/repos/ublue-os/startingpoint/generate`,
@@ -85,9 +85,16 @@
         }
       }
 
+      customImage.update((c) => {
+        return {
+          ...c,
+          repo: `${repo.owner.login}/${repo.name}`,
+        };
+      });
+
       // get sha of latest commit in `template`
       let templateBranchRes = await fetch(
-        `https://api.github.com/repos/${repo.owner.login}/${repo.name}/branches/template`,
+        `https://api.github.com/repos/${custom.repo}/branches/template`,
         {
           method: "get",
           headers: { Authorization: `Bearer ${custom.auth}` },
@@ -98,7 +105,7 @@
         log += "Getting info for branch 'template' failed, retrying...\n";
         await new Promise((r) => setTimeout(r, 1000));
         templateBranchRes = await fetch(
-          `https://api.github.com/repos/${repo.owner.login}/${repo.name}/branches/template`,
+          `https://api.github.com/repos/${custom.repo}/branches/template`,
           {
             method: "get",
             headers: { Authorization: `Bearer ${custom.auth}` },
@@ -110,7 +117,7 @@
 
       // create branch called `live`
       const newBranchRes = await fetch(
-        `https://api.github.com/repos/${repo.owner.login}/${repo.name}/git/refs`,
+        `https://api.github.com/repos/${custom.repo}/git/refs`,
         {
           method: "post",
           headers: { Authorization: `Bearer ${custom.auth}` },
@@ -130,7 +137,7 @@
 
       // update the default branch to "live" and set the description
       const updateRes = await fetch(
-        `https://api.github.com/repos/${repo.owner.login}/${repo.name}`,
+        `https://api.github.com/repos/${custom.repo}`,
         {
           method: "post",
           headers: { Authorization: `Bearer ${custom.auth}` },
@@ -151,7 +158,7 @@
       }
 
       const readmeRes = await fetch(
-        `https://api.github.com/repos/${repo.owner.login}/${repo.name}/contents/README.md`,
+        `https://api.github.com/repos/${custom.repo}/contents/README.md`,
         {
           method: "get",
           headers: { Authorization: `Bearer ${custom.auth}` },
@@ -166,15 +173,12 @@
         log += "Recipe got successfully! \n";
       }
       let readme = String(atob(readmeJson.content));
-      readme = readme.replaceAll(
-        "ublue-os/startingpoint",
-        `${repo.owner.login}/${repo.name}`
-      );
+      readme = readme.replaceAll("ublue-os/startingpoint", custom.repo);
       const readmeLines = readme.split("\n");
       readmeLines[0] = `# ${custom.name}`;
       readme = readmeLines.join("\n");
       const readmeUpdateRes = await fetch(
-        `https://api.github.com/repos/${repo.owner.login}/${repo.name}/contents/README.md`,
+        `https://api.github.com/repos/${custom.repo}/contents/README.md`,
         {
           method: "put",
           headers: { Authorization: `Bearer ${custom.auth}` },
@@ -193,7 +197,7 @@
       }
 
       const recipeRes = await fetch(
-        `https://api.github.com/repos/${repo.owner.login}/${repo.name}/contents/recipe.yml`,
+        `https://api.github.com/repos/${custom.repo}/contents/recipe.yml`,
         {
           method: "get",
           headers: { Authorization: `Bearer ${custom.auth}` },
@@ -220,7 +224,7 @@
       recipeYml.contents.set("base-image", custom.baseImage);
 
       const recipeUpdateRes = await fetch(
-        `https://api.github.com/repos/${repo.owner.login}/${repo.name}/contents/recipe.yml`,
+        `https://api.github.com/repos/${custom.repo}/contents/recipe.yml`,
         {
           method: "put",
           headers: { Authorization: `Bearer ${custom.auth}` },
@@ -239,7 +243,7 @@
       }
 
       const workflowRes = await fetch(
-        `https://api.github.com/repos/${repo.owner.login}/${repo.name}/actions/permissions`,
+        `https://api.github.com/repos/${custom.repo}/actions/permissions`,
         {
           method: "put",
           headers: { Authorization: `Bearer ${custom.auth}` },
@@ -249,7 +253,7 @@
         }
       );
       const workflowRes2 = await fetch(
-        `https://api.github.com/repos/${repo.owner.login}/${repo.name}/actions/workflows/build.yml/enable`,
+        `https://api.github.com/repos/${custom.repo}/actions/workflows/build.yml/enable`,
         {
           method: "put",
           headers: { Authorization: `Bearer ${custom.auth}` },
@@ -260,11 +264,11 @@
       } else {
         log += "Workflows enabled successfully! \n";
       }
-      log += `Check https://github.com/${repo.owner.login}/${repo.name}/actions and enable workflows manually if needed. \n`;
+      log += `Check https://github.com/${custom.repo}/actions and enable workflows manually if needed. \n`;
 
       log += "**** \n";
       log += "You repo has been initialized successfully! \n";
-      log += `https://github.com/${repo.owner.login}/${repo.name}`;
+      log += `https://github.com/${custom.repo}`;
     } catch {
       log += "!!!! \n";
       log +=
