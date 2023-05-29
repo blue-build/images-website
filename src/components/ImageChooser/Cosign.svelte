@@ -112,7 +112,7 @@
       }
 
       log += "**** \n";
-      log += "Container signign for your repo has been setup successfully! \n";
+      log += "Container signing for your repo has been setup successfully! \n";
       log += `https://github.com/${$customImage.repo}`;
     } catch {
       log += "!!!! \n";
