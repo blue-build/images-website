@@ -281,7 +281,9 @@ Remember to include logs, both from the console (enable XHR) and here.";
 
 <div id="metadata" class="w-full max-w-4xl mx-auto p-16">
   <Box class="p-8 text-xl flex flex-col gap-8">
-    {#if authorized}
+    {#if $customImage.repo != undefined}
+      Repo already created! <br /> {$customImage.repo}
+    {:else if authorized}
       {#await forked then forked}
         {#if forked && !useTemplate}
           It appears that you already have a fork of ublue-os/startingpoint. <br
