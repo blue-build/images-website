@@ -169,7 +169,7 @@
         log += JSON.stringify(readmeJson);
         log += "\n";
       } else {
-        log += "Recipe got successfully! \n";
+        log += "README got successfully! \n";
       }
       let readme = String(atob(readmeJson.content));
       readme = readme.replaceAll("ublue-os/startingpoint", custom.repo);
