@@ -5,10 +5,8 @@
 
   let callback = "";
   let authorized = false;
-  let auth = "";
   let userInfo: { login: string };
 
-  // TODO auth state is not persistent
   customImage.subscribe((c) => {
     authorized = c.auth != undefined;
   });
@@ -16,23 +14,24 @@
   onMount(() => {
     callback = `${window.location.protocol}//${window.location.host}/.netlify/functions/github-oauth`;
     const urlParams = new URLSearchParams(window.location.search);
-    authorized = urlParams.has("access_token");
-    if (authorized) {
+    let authorizing = urlParams.has("access_token");
+    if (authorizing) {
       // @ts-expect-error // "access_token" not being null is checked by if
-      auth = urlParams.get("access_token");
       customImage.update((c) => {
         return {
           ...c,
-          auth: auth,
+          auth: urlParams.get("access_token"),
         };
       });
-      getUser();
     }
+    authorized = $customImage.auth != undefined;
   });
+
+  $: authorized && getUser();
 
   async function getUser() {
     const res = await fetch("https://api.github.com/user", {
-      headers: { Authorization: `Bearer ${auth}` },
+      headers: { Authorization: `Bearer ${$customImage.auth}` },
     });
     userInfo = await res.json();
     customImage.update((c) => {
