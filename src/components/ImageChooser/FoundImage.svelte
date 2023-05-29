@@ -5,7 +5,7 @@
   import { Desktop, Feature, features } from "@content/featureDefinitions";
 
   import { imagePreferences } from "@ts/stores";
-  import type { ImagePreferences, Images } from "@ts/types";
+  import type { ImagePreferences, Images, Image } from "@ts/types";
 
   let pref: ImagePreferences;
 
@@ -15,6 +15,18 @@
 
   import imagesUntyped from "@content/images.yml";
   const images: Images = imagesUntyped;
+
+  let filtered: Array<Image>;
+  $: filtered = images.images.filter((img) => {
+    const nvidiaFilter =
+      (pref.nvidia && img.featureSet.includes(Feature.nvidia)) ||
+      (!pref.nvidia && !img.featureSet.includes(Feature.nvidia));
+    const desktopFilter =
+      img.editions.filter((e) => {
+        return e.desktop == pref.edition.desktop;
+      }).length > 0;
+    return nvidiaFilter && desktopFilter;
+  });
 </script>
 
 <div id="images" class="w-full max-w-5xl mx-auto flex flex-col gap-8 p-16">
@@ -23,18 +35,22 @@
       The following image(s) were found based on your preferences. <br /> If there's
       nothing here, an image with the selected preferences is not available yet.
     </div>
-    <a href="#metadata" class="ml-auto">
-      <Box class="w-fit p-4">Continue to creating your own.</Box>
-    </a>
+    {#if filtered.length > 0}
+      <a href="#metadata" class="ml-auto">
+        <Box class="w-fit p-4">Continue to creating your own.</Box>
+      </a>
+    {/if}
   </div>
   <div class="p-2 flex flex-col gap-4">
-    {#each images.images as img}
-      {#if (pref.nvidia && img.featureSet.includes(Feature.nvidia)) || (!pref.nvidia && !img.featureSet.includes(Feature.nvidia))}
+    {#if filtered.length > 0}
+      {#each filtered as img}
         <ImageCard
           image={img}
           filter={{ featureSet: [], desktop: pref.edition.desktop }}
         />
-      {/if}
-    {/each}
+      {/each}
+    {:else}
+      <span class="text-fg-primary">Nothing found :(</span>
+    {/if}
   </div>
 </div>
