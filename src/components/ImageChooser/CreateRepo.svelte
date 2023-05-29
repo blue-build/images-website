@@ -7,6 +7,7 @@
   let authorized = false;
   let custom: CustomImage;
   let forked: Promise<boolean>;
+  let again = false;
   let useTemplate = false;
 
   let log = "";
@@ -36,6 +37,7 @@
   }
 
   async function createRepo() {
+    log = "";
     try {
       let repo: { owner: { login: string }; name: string };
       if (useTemplate) {
@@ -222,7 +224,7 @@
       );
       recipeYml.contents.set(
         "base-image",
-        `ghcr.io/ublue-os/${custom.baseImage}:latest`
+        `ghcr.io/ublue-os/${custom.baseImage}`
       );
 
       const recipeUpdateRes = await fetch(
@@ -284,8 +286,14 @@ Remember to include logs, both from the console (enable XHR) and here.";
 
 <div id="metadata" class="w-full max-w-4xl mx-auto p-16">
   <Box class="p-8 text-xl flex flex-col gap-8">
-    {#if $customImage.repo != undefined}
-      Repo already created! <br /> {$customImage.repo}
+    {#if $customImage.repo != undefined && !again}
+      Repo already created! <br />
+      {$customImage.repo}
+      <button
+        on:click={() => {
+          again = true;
+        }}><Box border class="p-4">Again!</Box></button
+      >
     {:else if authorized}
       {#await forked then forked}
         {#if forked && !useTemplate}
