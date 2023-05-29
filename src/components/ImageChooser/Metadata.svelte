@@ -61,7 +61,7 @@
     <form class="flex flex-col gap-4 w-3/4">
       <div>Custom image details:</div>
       <div class="text-lg flex flex-row gap-4 w-full">
-        <label for="name" class="w-32">Name:</label>
+        <label for="name" class="w-48">Name:</label>
         <Box class="w-full" border>
           <input
             bind:value={name}
@@ -73,7 +73,7 @@
         </Box>
       </div>
       <div class="text-lg flex flex-row gap-4 w-full">
-        <label for="name" class="w-32">Description:</label>
+        <label for="name" class="w-48">Description:</label>
         <Box class="w-full" border>
           <input
             bind:value={desc}
@@ -85,7 +85,7 @@
         </Box>
       </div>
       <div class="text-lg flex flex-row gap-4 w-full">
-        <div class="w-32">Base image:</div>
+        <div class="w-48">Base image:</div>
         <Box
           class="w-full bg-transparent text-fg-primary placeholder:text-fg-secondary p-1 px-2"
           border
