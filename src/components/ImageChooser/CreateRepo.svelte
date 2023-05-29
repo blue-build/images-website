@@ -220,7 +220,10 @@
           ? custom.description
           : "This is my personal OS image."
       );
-      recipeYml.contents.set("base-image", custom.baseImage);
+      recipeYml.contents.set(
+        "base-image",
+        `ghcr.io/ublue-os/${custom.baseImage}:latest`
+      );
 
       const recipeUpdateRes = await fetch(
         `https://api.github.com/repos/${custom.repo}/contents/recipe.yml`,
