@@ -24,24 +24,34 @@
 
   customImage.subscribe((c) => {
     custom = c;
+    if (!name || name.length == 0) name = c.name;
+    if (!desc) desc = c.description;
   });
 
   function setName(name: string) {
-    customImage.update((custom) => {
-      return {
-        ...custom,
-        name: name,
-      };
-    });
+    if (name != null) {
+      customImage.update((custom) => {
+        return {
+          ...custom,
+          name: name,
+        };
+      });
+    } else {
+      name = $customImage.name;
+    }
   }
 
   function setDesc(desc: string) {
-    customImage.update((custom) => {
-      return {
-        ...custom,
-        description: desc,
-      };
-    });
+    if (desc != null) {
+      customImage.update((custom) => {
+        return {
+          ...custom,
+          description: desc,
+        };
+      });
+    } else {
+      desc = $customImage.description;
+    }
   }
 </script>
 
