@@ -1,0 +1,25 @@
+FROM gcr.io/projectsigstore/cosign:v1.13.0 as cosign-bin
+
+FROM alpine:3.14
+
+COPY --from=cosign-bin /ko-app/cosign /usr/local/bin/cosign
+
+RUN printf '\
+#/bin/sh \n\
+echo "Do NOT put in a password. These keys will be used in CI and using passwords is not yet supported." \n\
+cosign generate-key-pair \n\
+echo \n\
+echo "Your public key is:" \n\
+echo \n\
+cat cosign.pub \n\
+echo \n\
+echo "Your private key is:" \n\
+echo \n\
+cat cosign.key \n\
+echo \n\
+echo "Do NOT mix these up!" \
+' > /usr/local/bin/genkeys.sh
+
+RUN chmod +x /usr/local/bin/genkeys.sh
+
+ENTRYPOINT [ "sh", "-c", "/usr/local/bin/genkeys.sh" ]
