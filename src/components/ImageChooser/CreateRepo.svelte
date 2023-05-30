@@ -286,7 +286,7 @@ Remember to include logs, both from the console (enable XHR) and here.";
 
 <div id="metadata" class="w-full max-w-4xl mx-auto p-16">
   <Box class="p-8 text-xl flex flex-col gap-8">
-    {#if $customImage.repo != undefined && !again}
+    {#if $customImage.repo != undefined && !again && log == ""}
       Repo already created! <br />
       {$customImage.repo}
       <button
@@ -296,7 +296,7 @@ Remember to include logs, both from the console (enable XHR) and here.";
       >
     {:else if authorized}
       {#await forked then forked}
-        {#if forked && !useTemplate}
+        {#if forked && !useTemplate && log == ""}
           It appears that you already have a fork of ublue-os/startingpoint. <br
           />
           Do you want to continue by creating a repository that is not a fork? (using
