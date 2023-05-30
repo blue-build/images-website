@@ -1,7 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import HeaderBar from "@components/HeaderBar.astro";
 import ImageChooser from "@sections/ImageChooser.svelte";
+import Hero from "@sections/Hero.astro";
 ---
 
 <script>
@@ -19,7 +19,7 @@ import ImageChooser from "@sections/ImageChooser.svelte";
 
 <Layout title="Universal Blue | Fedora Native Containers Images">
   <main class="bg-bg-page w-screen h-full min-h-screen">
-    <HeaderBar />
+    <Hero/>
     <ImageChooser client:idle />
   </main>
 </Layout>
