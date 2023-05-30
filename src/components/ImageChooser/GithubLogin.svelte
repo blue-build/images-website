@@ -5,7 +5,6 @@
 
   let callback = "";
   let authorized = false;
-  let userInfo: { login: string };
 
   customImage.subscribe((c) => {
     authorized = c.auth != undefined;
@@ -25,6 +24,9 @@
       });
     }
     authorized = $customImage.auth != undefined;
+    if (authorized) {
+      getUser();
+    }
   });
 
   $: authorized && getUser();
@@ -33,7 +35,7 @@
     const res = await fetch("https://api.github.com/user", {
       headers: { Authorization: `Bearer ${$customImage.auth}` },
     });
-    userInfo = await res.json();
+    const userInfo = await res.json();
     customImage.update((c) => {
       return {
         ...c,
@@ -57,8 +59,8 @@
       </a>
     {:else}
       <Box border class="p-4 w-fit">
-        Logged in {#if userInfo}
-          as {userInfo.login}
+        Logged in {#if $customImage.login != undefined}
+          as {$customImage.login}
         {/if}
       </Box>
     {/if}
