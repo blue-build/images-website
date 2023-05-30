@@ -5,7 +5,7 @@ This page is [(currently a demo version of)](https://ublue-images-demo.netlify.a
 ## TODO
 
 - ~~Get images from an API~~ (discarded)
-- Mobile friendliness
+- Deploy live version
 - Create video of finished and showcase it on GH Discussions
 
 ## Contributing
