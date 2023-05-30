@@ -68,4 +68,4 @@
   {/if}
 {/if}
 
-<div class="h-screen" />
+<div class="h-[25vh]" />
