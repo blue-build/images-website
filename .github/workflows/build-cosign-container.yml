@@ -6,7 +6,6 @@ on:
   push:
     branches:
       - main
-      - image-creator
   workflow_dispatch:
 env:
   IMAGE_NAME: cosign-generate-keypair
