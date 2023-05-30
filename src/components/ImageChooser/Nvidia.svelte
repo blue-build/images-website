@@ -20,8 +20,8 @@
   }
 </script>
 
-<div id="nvidia" class="w-full max-w-4xl mx-auto p-16">
-  <Box class="p-8 text-xl flex gap-8">
+<div id="nvidia" class="w-full max-w-4xl mx-auto p-8">
+  <Box class="p-8 text-xl flex flex-wrap gap-8">
     <div class="my-auto mr-9">Do you want Nvidia drivers?</div>
     <button
       on:click={() => {

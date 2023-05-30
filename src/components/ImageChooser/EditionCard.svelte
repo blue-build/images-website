@@ -28,10 +28,12 @@
 <!-- todo logos -->
 <button
   on:click={select}
-  class={`text-left
+  class={`text-left w-full
   ${selected ? "outline outline-2 outline-bg-secondary shadow-ubrut-lg" : ""}`}
 >
-  <Box class="text-4xl w-[24rem] h-[12rem] p-10 flex flex-col justify-center">
+  <Box
+    class="text-4xl sm:w-[24rem] w-full h-[12rem] p-10 flex flex-col justify-center"
+  >
     <div class="text-fg-primary">{name}</div>
     <div class="text-fg-secondary">
       {MainEdition.all.find((edi) => edi.name == name)?.desktop}

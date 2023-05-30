@@ -22,7 +22,7 @@
 <!-- todo get data from content.yml -->
 <div
   id="editions"
-  class="w-full max-w-7xl mx-auto h-full flex flex-row flex-wrap justify-center items-center p-16 gap-16"
+  class="w-full max-w-7xl mx-auto h-full flex flex-row flex-wrap justify-center items-center sm:p-16 p-8 gap-16"
 >
   {#each MainEdition.all as edi}
     <EditionCard
@@ -34,34 +34,34 @@
   {/each}
 </div>
 
-<hr class="w-[90vw] mx-auto my-12" />
+<hr class="w-[90vw] mx-auto my-16" />
 
 <Nvidia />
 
-<hr class="w-[90vw] mx-auto my-12" />
+<hr class="w-[90vw] mx-auto my-16" />
 
 <FoundImage />
 
-<hr class="w-[90vw] mx-auto my-12" />
+<hr class="w-[90vw] mx-auto my-16" />
 
 <Metadata />
 
-<hr class="w-[90vw] mx-auto my-12" />
+<hr class="w-[90vw] mx-auto my-16" />
 
 <GithubLogin />
 
 {#if $customImage.auth != undefined}
-  <hr class="w-[90vw] mx-auto my-12" />
+  <hr class="w-[90vw] mx-auto my-16" />
 
   <CreateRepo />
 
   {#if $customImage.repo != undefined}
-    <hr class="w-[90vw] mx-auto my-12" />
+    <hr class="w-[90vw] mx-auto my-16" />
 
     <Cosign />
 
     {#if $customImage.signingDone}
-      <hr class="w-[90vw] mx-auto my-12" />
+      <hr class="w-[90vw] mx-auto my-16" />
 
       <Final />
     {/if}

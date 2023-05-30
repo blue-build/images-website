@@ -56,11 +56,11 @@
 </script>
 
 <!-- todo bind inputs to variables -->
-<div id="metadata" class="w-full max-w-4xl mx-auto p-16">
+<div id="metadata" class="w-full max-w-4xl mx-auto p-8">
   <Box class="p-8 text-xl flex gap-8">
-    <form class="flex flex-col gap-4 w-3/4">
+    <form class="flex flex-col gap-4 sm:w-3/4 w-full">
       <div>Custom image details:</div>
-      <div class="text-lg flex flex-row gap-4 w-full">
+      <div class="text-lg flex flex-row flex-wrap gap-4 w-full">
         <label for="name" class="w-48">Name:</label>
         <Box class="w-full" border>
           <input
@@ -72,7 +72,7 @@
           />
         </Box>
       </div>
-      <div class="text-lg flex flex-row gap-4 w-full">
+      <div class="text-lg flex flex-row flex-wrap gap-4 w-full">
         <label for="name" class="w-48">Description:</label>
         <Box class="w-full" border>
           <input
@@ -84,7 +84,7 @@
           />
         </Box>
       </div>
-      <div class="text-lg flex flex-row gap-4 w-full">
+      <div class="text-lg flex flex-row flex-wrap gap-4 w-full">
         <div class="w-48">Base image:</div>
         <Box
           class="w-full bg-transparent text-fg-primary placeholder:text-fg-secondary p-1 px-2"

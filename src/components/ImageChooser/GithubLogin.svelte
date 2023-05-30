@@ -47,7 +47,7 @@
   const clientId = "8c6add6c853b329dd78c";
 </script>
 
-<div id="login" class="w-full max-w-4xl mx-auto p-16">
+<div id="login" class="w-full max-w-4xl mx-auto p-8">
   <Box class="p-8 text-xl">
     {#if !authorized}
       <a
