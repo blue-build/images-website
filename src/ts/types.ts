@@ -78,4 +78,5 @@ export interface CustomImage {
   auth: string | undefined;
   login: string | undefined;
   repo: string | undefined;
+  signingDone: boolean;
 }

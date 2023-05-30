@@ -111,6 +111,7 @@
         log += "cosign.pub updated successfully! \n";
       }
 
+      $customImage.signingDone = true;
       log += "**** \n";
       log += "Container signing for your repo has been setup successfully! \n";
       log += `https://github.com/${$customImage.repo}`;

@@ -10,6 +10,7 @@
   import { imagePreferences, customImage } from "@ts/stores";
   import type { ImagePreferences } from "@ts/types";
   import { MainEdition } from "@ts/types";
+  import Final from "@components/ImageChooser/Final.svelte";
 
   let pref: ImagePreferences;
 
@@ -58,6 +59,12 @@
     <hr class="w-[90vw] mx-auto my-12" />
 
     <Cosign />
+
+    {#if $customImage.signingDone}
+      <hr class="w-[90vw] mx-auto my-12" />
+
+      <Final />
+    {/if}
   {/if}
 {/if}
 
