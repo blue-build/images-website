@@ -26,6 +26,7 @@ export const customImage = writable<CustomImage>(
         auth: undefined,
         login: undefined,
         repo: undefined,
+        signingDone: false,
       }
 );
 
