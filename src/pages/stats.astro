@@ -1,0 +1,26 @@
+---
+import Layout from "@layouts/Layout.astro";
+import HeaderBar from "@components/HeaderBar.astro";
+import PullStats from "@sections/PullStats.svelte";
+---
+
+<script>
+  import { darkModeStore } from "@ts/stores";
+
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    darkModeStore.set(true);
+  }
+
+  darkModeStore.subscribe((d) => {
+    if (d) document.documentElement.classList.add("dark");
+    else document.documentElement.classList.remove("dark");
+  });
+</script>
+
+<Layout title="Universal Blue | Fedora Native Containers Images">
+  <main class="bg-bg-page w-screen h-full min-h-screen">
+    <HeaderBar></HeaderBar>
+    <hr class="mb-32">
+    <PullStats client:idle />
+  </main>
+</Layout>
