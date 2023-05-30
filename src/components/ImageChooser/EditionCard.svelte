@@ -28,7 +28,7 @@
 <!-- todo logos -->
 <button
   on:click={select}
-  class={`text-left w-full
+  class={`text-left sm:w-[24rem] w-full
   ${selected ? "outline outline-2 outline-bg-secondary shadow-ubrut-lg" : ""}`}
 >
   <Box
