@@ -13,6 +13,7 @@
 
   export let image: Image;
   export let filter: ImageFilter;
+  export let border: boolean = false;
 
   $: filteredEditions = image.editions.filter((e) => {
     if (filter.featureSet.length < 1 && filter.desktop === null) return true;
@@ -32,7 +33,7 @@
 </script>
 
 {#each filteredEditions as edition}
-  <Box class="flex flex-col p-5">
+  <Box {border} class="flex flex-col p-5">
     <div class="flex flex-row items-center gap-2">
       <h2 class="mr-8 text-xl font-bold text-fg-primary">
         {templateStr(image.name, { edition: edition })}
