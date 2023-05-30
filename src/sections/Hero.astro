@@ -1,23 +1,26 @@
 ---
+import HeaderBar from "@components/HeaderBar.astro";
+
 import { Content, frontmatter } from "@content/hero.md";
 
 import Box from "@components/Box.svelte";
 ---
 
 <div
-  class="flex h-screen w-screen place-content-center bg-gradient-to-b from-indigo-400 px-5 dark:from-indigo-900"
+  class="flex flex-col h-screen w-screen place-content-center px-5"
 >
+  <HeaderBar />
   <div class="flex max-w-3xl flex-col gap-5 place-self-center">
-    <h1 class="max-w-2xl text-5xl text-indigo-900 dark:text-indigo-300">
+    <h1 class="max-w-2xl text-5xl text-fg-secondary dark:text-indigo-300">
       {frontmatter.title}
     </h1>
     <span class="text text-xl dark:text-white">
       <Content />
     </span>
     <div class="flex flex-row gap-4 text-lg">
-      <!-- <a href="#images">
-        <Box client:idle class="flex flex-row gap-2">
-          Browse the images <i class="i i-arrow-downward"></i>
+      <a href="#editions">
+        <Box client:idle class="flex flex-row gap-2 p-2">
+          Pick or create an image <i class="i i-arrow-downward"></i>
         </Box>
       </a> -->
       <a href="#stats">
@@ -26,7 +29,7 @@ import Box from "@components/Box.svelte";
         </Box>
       </a>
       <a href="https://ublue.it/">
-        <Box client:idle class="flex flex-row gap-2">
+        <Box client:idle class="flex flex-row gap-2 p-2">
           Read the docs <i class="i i-arrow-outward"></i>
         </Box>
       </a>
@@ -37,7 +40,7 @@ import Box from "@components/Box.svelte";
 <!-- Style has to be global to affect the links inside the content component -->
 <style is:global>
   .text a {
-    @apply text-blue-900 hover:underline dark:text-blue-400;
+    @apply text-fg-secondary hover:underline;
   }
   .text em {
     @apply font-medium;
