@@ -4,8 +4,8 @@
   import { customImage, imagePreferences } from "@ts/stores";
 </script>
 
-<div id="metadata" class="w-full max-w-4xl mx-auto p-16">
-  <Box class="p-8 flex flex-col gap-4 relative">
+<div id="metadata" class="w-full max-w-4xl mx-auto p-8">
+  <Box class="sm:p-8 p-4 flex flex-col gap-4 relative">
     <h2 class="text-xl">All done! :tada:</h2>
     <div class="flex flex-row gap-4">
       <a href={`https://github.com/${$customImage.repo}`}>

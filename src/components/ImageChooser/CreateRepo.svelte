@@ -284,7 +284,7 @@ Remember to include logs, both from the console (enable XHR) and here.";
   }
 </script>
 
-<div id="metadata" class="w-full max-w-4xl mx-auto p-16">
+<div id="metadata" class="w-full max-w-4xl mx-auto p-8">
   <Box class="p-8 text-xl flex flex-col gap-8">
     {#if $customImage.repo != undefined && !again && log == ""}
       Repo already created! <br />

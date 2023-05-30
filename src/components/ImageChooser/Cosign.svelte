@@ -126,15 +126,15 @@ Remember to include logs, both from the console (enable XHR) and here.";
   }
 </script>
 
-<div id="metadata" class="w-full max-w-4xl mx-auto p-16">
+<div id="metadata" class="w-full max-w-4xl mx-auto p-8">
   <Box class="p-8 flex flex-col gap-4 relative">
     <!-- svelte-ignore a11y-no-noninteractive-tabindex (element is interactive with hover and focus) -->
     <div class="absolute right-4 top-4 group" tabindex="0">
-      <div class="cursor-pointer text-xs">Can I trust you?</div>
+      <div class="cursor-pointer text-xs underline">Can I trust you?</div>
       <div
-        class="hidden group-hover:block group-focus:block absolute text-sm -top-16 -left-64"
+        class="hidden group-hover:block group-focus:block sm:absolute text-sm lg:-top-8 lg:-left-32 sm:-top-16 sm:-left-24 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
       >
-        <Box class="p-2 w-[32rem]">
+        <Box class="p-2 lg:w-[32rem] sm:w-[24rem] w-[16rem]" border>
           uBlue and this website is an open source project and so is this
           website. You can view the source code of this website in <a
             href="https://github.com/ublue-os/images-website"

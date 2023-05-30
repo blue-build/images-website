@@ -29,15 +29,17 @@
   });
 </script>
 
-<div id="images" class="w-full max-w-5xl mx-auto flex flex-col gap-8 p-16">
-  <div class="text-lg text-fg-primary flex flex-row items-center gap-8">
+<div id="images" class="w-full max-w-5xl mx-auto flex flex-col gap-8 p-8">
+  <div
+    class="text-lg text-fg-primary flex sm:flex-row flex-col items-center gap-8"
+  >
     <div>
       The following image(s) were found based on your preferences. <br /> If there's
       nothing here, an image with the selected preferences is not available yet.
     </div>
     {#if filtered.length > 0}
-      <a href="#metadata" class="ml-auto">
-        <Box class="w-fit p-4">Continue to creating your own.</Box>
+      <a href="#metadata" class="sm:ml-auto sm:w-fit w-full">
+        <Box class="sm:w-fit w-full p-4">Continue to creating your own.</Box>
       </a>
     {/if}
   </div>
