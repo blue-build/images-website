@@ -25,12 +25,7 @@
   class="w-full max-w-7xl mx-auto h-full flex flex-row flex-wrap justify-center items-center sm:p-16 p-8 gap-16"
 >
   {#each MainEdition.all as edi}
-    <EditionCard
-      name={edi.name}
-      notice={edi.name == "Onyx"
-        ? "This image will only be available once Fedora 39 is released."
-        : undefined}
-    />
+    <EditionCard name={edi.name} />
   {/each}
 </div>
 

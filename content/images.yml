@@ -51,6 +51,9 @@ images:
       - name: lxqt
         desktop: LXQt
         description: A custom Fedora Ostree build with LXQt and uBlue QoL.
+      - name: budgie
+        desktop: Budgie
+        description: A custom Fedora Ostree build with Budgie and uBlue QoL.
       - name: mate
         desktop: MATE
         description: A custom Fedora Ostree build with MATE and uBlue QoL.
@@ -81,6 +84,9 @@ images:
       - name: lxqt
         desktop: LXQt
         description: A custom Fedora Ostree build with LXQt and Nvidia drivers.
+      - name: budgie
+        desktop: Budgie
+        description: A custom Fedora Ostree build with Budgie and Nvidia drivers.
       - name: mate
         desktop: MATE
         description: A custom Fedora Ostree build with MATE and Nvidia drivers.
