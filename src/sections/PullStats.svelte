@@ -1,10 +1,11 @@
 <script lang="ts">
-  import stats from "@content/stats.json";
   import Chart from "chart.js/auto";
   import { onMount } from "svelte";
   import { darkModeStore } from "@ts/stores";
 
-  onMount(() => {
+  export let stats
+
+  onMount(async () => {
     const statEntries = Object.entries(stats);
     const dates = statEntries.map((row) => row[0]);
     const images = Object.entries(statEntries[0][1]).map((d) => d[0]);

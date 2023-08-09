@@ -2,6 +2,9 @@
 import Layout from "@layouts/Layout.astro";
 import HeaderBar from "@components/HeaderBar.astro";
 import PullStats from "@sections/PullStats.svelte";
+
+const statsRes = await fetch('https://storage.googleapis.com/ghp-stats/ublue-os/data.json')
+const stats = await statsRes.json()
 ---
 
 <script>
@@ -21,6 +24,6 @@ import PullStats from "@sections/PullStats.svelte";
   <main class="bg-bg-page w-screen h-full min-h-screen">
     <HeaderBar></HeaderBar>
     <hr class="mb-32">
-    <PullStats client:idle />
+    <PullStats client:idle stats={stats}/>
   </main>
 </Layout>
