@@ -198,7 +198,7 @@
       }
 
       const recipeRes = await fetch(
-        `https://api.github.com/repos/${custom.repo}/contents/recipe.yml`,
+        `https://api.github.com/repos/${custom.repo}/contents/config/recipe.yml`,
         {
           method: "get",
           headers: { Authorization: `Bearer ${custom.auth}` },
@@ -228,7 +228,7 @@
       );
 
       const recipeUpdateRes = await fetch(
-        `https://api.github.com/repos/${custom.repo}/contents/recipe.yml`,
+        `https://api.github.com/repos/${custom.repo}/contents/config/recipe.yml`,
         {
           method: "put",
           headers: { Authorization: `Bearer ${custom.auth}` },
