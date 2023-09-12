@@ -1,7 +1,6 @@
 <script lang="ts">
   import Chart from "chart.js/auto";
   import { onMount } from "svelte";
-  import { darkModeStore } from "@ts/stores";
 
   export let stats
 
@@ -29,7 +28,6 @@
     });
 
     datasets.push({
-      type: "bar",
       label: "total",
       data: dates.map((date) => totalForDate(date)),
     });
@@ -68,10 +66,27 @@
     });
 
     new Chart(document.getElementById("total"), {
-      type: "line",
+      type: "bar",
       data: {
         labels: dates,
         datasets: datasets.filter((d) => d.label == "total"),
+      },
+      options: chartOptions
+    });
+
+    // daily pulls (how much bigger is todays total pull count from yesterdays)
+    // is calculated by subtracting yesterday's total from today's
+    const daily = [{
+      label: "daily pulls",
+      data: dates.map((date, i) => {
+        return totalForDate(date)-totalForDate(dates[i-1] || dates[0]) 
+      }),
+    }]
+    new Chart(document.getElementById("daily"), {
+      type: "bar",
+      data: {
+        labels: dates,
+        datasets: daily,
       },
       options: chartOptions
     });
@@ -110,6 +125,10 @@
   <figure class="h-[48rem]">
     <figcaption>Total pulls</figcaption>
     <canvas id="total"/>
+  </figure>
+  <figure class="h-[48rem]">
+    <figcaption>Daily pulls (bad data quality in some areas leading to odd peaks and dips)</figcaption>
+    <canvas id="daily"/>
   </figure>
   <figure class="h-[48rem]">
     <figcaption>Main & Nvidia</figcaption>
