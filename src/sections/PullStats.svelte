@@ -42,6 +42,8 @@
       },
       options: {
         color: "#7C7DA5",
+        responsive: true,
+        maintainAspectRatio: false,
         scales: {
           x: {
             ticks: {
@@ -66,5 +68,5 @@
 </script>
 
 <div id="stats" class="h-full w-full p-8">
-  <canvas id="pulls" />
+  <canvas id="pulls" class="min-h-[48rem]" />
 </div>
