@@ -34,16 +34,9 @@
       data: dates.map((date) => totalForDate(date)),
     });
 
-    new Chart(document.getElementById("pulls"), {
-      type: "line",
-      data: {
-        labels: dates,
-        datasets: datasets,
-      },
-      options: {
+    const chartOptions = {
         color: "#7C7DA5",
         responsive: true,
-        maintainAspectRatio: false,
         scales: {
           x: {
             ticks: {
@@ -62,11 +55,67 @@
             },
           },
         },
+    }
+
+    new Chart(document.getElementById("everything"), {
+      type: "line",
+      data: {
+        labels: dates,
+        datasets: datasets.filter((d) => d.label != "total"),
       },
+      options: chartOptions
+    });
+
+    new Chart(document.getElementById("total"), {
+      type: "line",
+      data: {
+        labels: dates,
+        datasets: datasets.filter((d) => d.label == "total"),
+      },
+      options: chartOptions
+    });
+
+    new Chart(document.getElementById("main"), {
+      type: "line",
+      data: {
+        labels: dates,
+        datasets: datasets.filter(
+          (d) =>
+          (d.label.includes("main") || d.label.includes("nvidia")
+          && !d.label.includes("akmods") && !d.label.includes("bluefin")
+        )),
+      },
+      options: chartOptions
+    });
+
+    new Chart(document.getElementById("bbb"), {
+      type: "line",
+      data: {
+        labels: dates,
+        datasets: datasets.filter(
+          (d) => d.label.includes("bluefin") || d.label.includes("bazzite") || d.label.includes("beyond")
+        ),
+      },
+      options: chartOptions
     });
   });
 </script>
 
-<div id="stats" class="h-full w-full p-8">
-  <canvas id="pulls" class="min-h-[48rem]" />
+<div id="stats" class="h-full w-full p-8 flex flex-col gap-8">
+  <figure>
+    <figcaption>All images</figcaption>
+    <canvas id="everything" class="min-h-[48rem]" />
+  </figure>
+  <figure>
+    <figcaption>Total pulls</figcaption>
+    <canvas id="total" class="min-h-[48rem]" />
+  </figure>
+  <figure>
+    <figcaption>Main & Nvidia</figcaption>
+    <canvas id="main" class="min-h-[48rem]" />
+  </figure>
+  <figure>
+    <figcaption>Bluefin vs Bazzite vs Beyond</figcaption>
+    <canvas id="bbb" class="min-h-[48rem]" />
+  </figure>
 </div>
