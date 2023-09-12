@@ -37,6 +37,7 @@
     const chartOptions = {
         color: "#7C7DA5",
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
           x: {
             ticks: {
@@ -102,20 +103,20 @@
 </script>
 
 <div id="stats" class="h-full w-full p-8 flex flex-col gap-8">
-  <figure>
+  <figure class="h-[48rem]">
     <figcaption>All images</figcaption>
-    <canvas id="everything" class="min-h-[48rem]" />
+    <canvas id="everything"/>
   </figure>
-  <figure>
+  <figure class="h-[48rem]">
     <figcaption>Total pulls</figcaption>
-    <canvas id="total" class="min-h-[48rem]" />
+    <canvas id="total"/>
   </figure>
-  <figure>
+  <figure class="h-[48rem]">
     <figcaption>Main & Nvidia</figcaption>
-    <canvas id="main" class="min-h-[48rem]" />
+    <canvas id="main"/>
   </figure>
-  <figure>
+  <figure class="h-[48rem]">
     <figcaption>Bluefin vs Bazzite vs Beyond</figcaption>
-    <canvas id="bbb" class="min-h-[48rem]" />
+    <canvas id="bbb"/>
   </figure>
 </div>
