@@ -1472,7 +1472,7 @@ packages:
       vite: 4.1.5
       vitefu: 0.2.4(vite@4.1.5)
       yargs-parser: 21.1.1
-      zod: 3.20.6
+      zod: 3.22.4
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -4183,8 +4183,8 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /zod@3.20.6:
-    resolution: {integrity: sha512-oyu0m54SGCtzh6EClBVqDDlAYRz4jrVtKwQ7ZnsEmMI9HnzuZFj8QFwAY1M5uniIYACdGvv0PBWPF2kO0aNofA==}
+  /zod@3.22.4:
+    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
     dev: false
 
   /zwitch@2.0.4:
