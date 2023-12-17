@@ -246,6 +246,46 @@
         log += "Recipe updated successfully! \n";
       }
 
+      const bootMenuRes = await fetch(
+        `https://api.github.com/repos/${custom.repo}/contents/boot_menu.yml`,
+        {
+          method: "get",
+          headers: { Authorization: `Bearer ${custom.auth}` },
+        }
+      );
+      const bootMenuJson = await bootMenuRes.json();
+      if (!bootMenuRes.ok) {
+        log += "Error getting boot menu: \n";
+        log += JSON.stringify(bootMenuJson);
+        log += "\n";
+      } else {
+        log += "Boot menu got successfully! \n";
+      }
+      const bootMenu = String(atob(bootMenuJson.content));
+
+      const bootMenuYml = YAML.parseDocument(bootMenu);
+      bootMenuYml.contents.deleteIn(['ublue_variants', 0]) 
+      bootMenuYml.contents.addIn(['ublue_variants'], { label: custom.repo?.toLowerCase(), ks: '/kickstart/ublue-os.ks', flavors: [{ label: custom.name }] })
+
+      const bootMenuUpdateRes = await fetch(
+        `https://api.github.com/repos/${custom.repo}/contents/boot_menu.yml`,
+        {
+          method: "put",
+          headers: { Authorization: `Bearer ${custom.auth}` },
+          body: JSON.stringify({
+            message:
+              "chore(automatic): update boot_menu to match image",
+            content: btoa(YAML.stringify(bootMenuYml)),
+            sha: bootMenuJson.sha,
+          }),
+        }
+      );
+      if (!bootMenuUpdateRes.ok) {
+        log += "Error updating boot menu. \n";
+      } else {
+        log += "Boot menu updated successfully! \n";
+      }
+
       const workflowRes = await fetch(
         `https://api.github.com/repos/${custom.repo}/actions/permissions`,
         {
