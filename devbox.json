@@ -1,7 +1,8 @@
 {
   "packages": [
     "nodejs@latest",
-    "nodePackages.pnpm@latest"
+    "nodePackages.pnpm@latest",
+    "netlify-cli@latest"
   ],
   "shell": {
     "init_hook": [

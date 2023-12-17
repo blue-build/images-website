@@ -1,6 +1,26 @@
 {
   "lockfile_version": "1",
   "packages": {
+    "netlify-cli@latest": {
+      "last_modified": "2023-12-09T06:39:50Z",
+      "resolved": "github:NixOS/nixpkgs/29558c0722ffd40ff625256e16259168b7c03ed1#netlify-cli",
+      "source": "devbox-search",
+      "version": "12.2.4",
+      "systems": {
+        "aarch64-darwin": {
+          "store_path": "/nix/store/npmprmva1pykrlch39w61q7jmyqny0yj-netlify-cli-12.2.4"
+        },
+        "aarch64-linux": {
+          "store_path": "/nix/store/iad61v7mc39v2ngpxfl5f3m0klrg8x4m-netlify-cli-12.2.4"
+        },
+        "x86_64-darwin": {
+          "store_path": "/nix/store/m274i0rwwpjz4r4a0d860gmv0q7dk5zh-netlify-cli-12.2.4"
+        },
+        "x86_64-linux": {
+          "store_path": "/nix/store/5wz421sishfd6rg695j4z2l0x1a2yihn-netlify-cli-12.2.4"
+        }
+      }
+    },
     "nodePackages.pnpm@latest": {
       "last_modified": "2023-11-23T16:10:41Z",
       "resolved": "github:NixOS/nixpkgs/e8b0430bc4c4235607ae102010dec2ba32e8c0ca#nodePackages.pnpm",
