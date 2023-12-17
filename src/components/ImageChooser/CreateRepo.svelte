@@ -174,7 +174,7 @@
         log += "README got successfully! \n";
       }
       let readme = String(atob(readmeJson.content));
-      readme = readme.replaceAll("ublue-os/startingpoint", custom.repo);
+      readme = readme.replaceAll("ublue-os/startingpoint", custom.repo?.toLowerCase());
       const readmeLines = readme.split("\n");
       readmeLines[0] = `# ${custom.name}`;
       readme = readmeLines.join("\n");
