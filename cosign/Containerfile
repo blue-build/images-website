@@ -1,4 +1,4 @@
-FROM gcr.io/projectsigstore/cosign:v1.13.0 as cosign-bin
+FROM gcr.io/projectsigstore/cosign:latest as cosign-bin
 
 FROM alpine:3.14
 
