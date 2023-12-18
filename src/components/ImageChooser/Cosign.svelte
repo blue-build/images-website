@@ -99,7 +99,7 @@
           headers: { Authorization: `Bearer ${$customImage.auth}` },
           body: JSON.stringify({
             message: "chore(automatic): new cosign keys",
-            content: btoa(publicKey),
+            content: btoa(publicKey.trimEnd()+'\n'),
             sha: publicKeyJson.sha,
           }),
         }
