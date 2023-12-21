@@ -17,10 +17,11 @@
         throw new Error();
       }
       if (
+        !privateKey.startsWith("-----BEGIN ENCRYPTED SIGSTORE PRIVATE KEY-----") &&
         !privateKey.startsWith("-----BEGIN ENCRYPTED COSIGN PRIVATE KEY-----")
       ) {
         log +=
-          'Invalid private key, must start with "-----BEGIN ENCRYPTED COSIGN PRIVATE KEY-----". \n';
+          'Invalid private key, must start with "-----BEGIN ENCRYPTED SIGSTORE PRIVATE KEY-----" or "-----BEGIN ENCRYPTED COSIGN PRIVATE KEY-----". \n';
         throw new Error();
       }
 
@@ -166,7 +167,7 @@ Remember to include logs, both from the console (enable XHR) and here.";
             bind:value={privateKey}
             id="private"
             class="w-full h-32 bg-transparent text-fg-primary placeholder:text-fg-secondary p-1 px-2"
-            placeholder="-----BEGIN ENCRYPTED COSIGN PRIVATE KEY-----"
+            placeholder="-----BEGIN ENCRYPTED SIGSTORE PRIVATE KEY-----"
           />
         </Box>
         <button on:click={setupSigning}>
