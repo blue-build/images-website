@@ -8,7 +8,7 @@
   let custom: CustomImage;
   let forked: Promise<boolean>;
   let again = false;
-  let useTemplate = false;
+  let useTemplate = true;
 
   let log = "";
 
@@ -22,13 +22,13 @@
 
   async function isForked() {
     const res = await fetch(
-      `https://api.github.com/repos/ublue-os/startingpoint/forks`,
+      `https://api.github.com/repos/blue-build/template/forks`,
       {
         headers: { Authorization: `Bearer ${custom.auth}` },
       }
     );
     const forks = await res.json();
-    // checks if the array containing all forks of startingpoint by custom.login is longer than 0
+    // checks if the array containing all forks of template by custom.login is longer than 0
     return (
       forks.filter((f: { owner: { login: string } }) => {
         return f.owner.login == custom.login;
@@ -42,7 +42,7 @@
       let repo: { owner: { login: string }; name: string };
       if (useTemplate) {
         const res = await fetch(
-          `https://api.github.com/repos/ublue-os/startingpoint/generate`,
+          `https://api.github.com/repos/blue-build/template/generate`,
           {
             method: "post",
             headers: { Authorization: `Bearer ${custom.auth}` },
@@ -62,7 +62,7 @@
         }
       } else {
         const res = await fetch(
-          `https://api.github.com/repos/ublue-os/startingpoint/forks`,
+          `https://api.github.com/repos/blue-build/template/forks`,
           {
             method: "post",
             headers: { Authorization: `Bearer ${custom.auth}` },
@@ -93,48 +93,48 @@
         };
       });
 
-      // get sha of latest commit in `template`
-      let templateBranchRes = await fetch(
-        `https://api.github.com/repos/${custom.repo}/branches/template`,
-        {
-          method: "get",
-          headers: { Authorization: `Bearer ${custom.auth}` },
-        }
-      );
-      // when creating a fork it might take a while for the branch to exist, so we retry every second
-      while (templateBranchRes.status != 200) {
-        log += "Getting info for branch 'template' failed, retrying...\n";
-        await new Promise((r) => setTimeout(r, 1000));
-        templateBranchRes = await fetch(
-          `https://api.github.com/repos/${custom.repo}/branches/template`,
-          {
-            method: "get",
-            headers: { Authorization: `Bearer ${custom.auth}` },
-          }
-        );
-      }
-      const templateBranch = await templateBranchRes.json();
-      log += "Info for branch 'template' got succesfully! \n";
+      // // get sha of latest commit in `template`
+      // let templateBranchRes = await fetch(
+      //   `https://api.github.com/repos/${custom.repo}/branches/template`,
+      //   {
+      //     method: "get",
+      //     headers: { Authorization: `Bearer ${custom.auth}` },
+      //   }
+      // );
+      // // when creating a fork it might take a while for the branch to exist, so we retry every second
+      // while (templateBranchRes.status != 200) {
+      //   log += "Getting info for branch 'template' failed, retrying...\n";
+      //   await new Promise((r) => setTimeout(r, 1000));
+      //   templateBranchRes = await fetch(
+      //     `https://api.github.com/repos/${custom.repo}/branches/template`,
+      //     {
+      //       method: "get",
+      //       headers: { Authorization: `Bearer ${custom.auth}` },
+      //     }
+      //   );
+      // }
+      // const templateBranch = await templateBranchRes.json();
+      // log += "Info for branch 'template' got succesfully! \n";
 
-      // create branch called `live`
-      const newBranchRes = await fetch(
-        `https://api.github.com/repos/${custom.repo}/git/refs`,
-        {
-          method: "post",
-          headers: { Authorization: `Bearer ${custom.auth}` },
-          body: JSON.stringify({
-            ref: "refs/heads/live",
-            // this is a required parameter, the new branch is created from the sha
-            sha: templateBranch.commit.sha,
-          }),
-        }
-      );
-      if (!newBranchRes.ok) {
-        log += "Creating branch 'live' failed. \n";
-        throw new Error();
-      } else {
-        log += "New branch 'live' created succesfully! \n";
-      }
+      // // create branch called `live`
+      // const newBranchRes = await fetch(
+      //   `https://api.github.com/repos/${custom.repo}/git/refs`,
+      //   {
+      //     method: "post",
+      //     headers: { Authorization: `Bearer ${custom.auth}` },
+      //     body: JSON.stringify({
+      //       ref: "refs/heads/live",
+      //       // this is a required parameter, the new branch is created from the sha
+      //       sha: templateBranch.commit.sha,
+      //     }),
+      //   }
+      // );
+      // if (!newBranchRes.ok) {
+      //   log += "Creating branch 'live' failed. \n";
+      //   throw new Error();
+      // } else {
+      //   log += "New branch 'live' created succesfully! \n";
+      // }
 
       // update the default branch to "live" and set the description
       const updateRes = await fetch(
@@ -143,7 +143,7 @@
           method: "post",
           headers: { Authorization: `Bearer ${custom.auth}` },
           body: JSON.stringify({
-            default_branch: "live",
+            // default_branch: "live",
             description:
               custom.description != undefined
                 ? custom.description
@@ -157,6 +157,9 @@
       } else {
         log += "Updated repo information successfully! \n";
       }
+
+      // hacky fix for issues caused by repository being empty right after generation
+      await new Promise(r => setTimeout(r, 2000));
 
       const readmeRes = await fetch(
         `https://api.github.com/repos/${custom.repo}/contents/README.md`,
@@ -174,7 +177,7 @@
         log += "README got successfully! \n";
       }
       let readme = String(atob(readmeJson.content));
-      readme = readme.replaceAll("ublue-os/startingpoint", custom.repo?.toLowerCase());
+      readme = readme.replaceAll("blue-build/template", custom.repo?.toLowerCase());
       const readmeLines = readme.split("\n");
       readmeLines[0] = `# ${custom.name}`;
       readme = readmeLines.join("\n");
@@ -185,7 +188,7 @@
           headers: { Authorization: `Bearer ${custom.auth}` },
           body: JSON.stringify({
             message:
-              "chore(automatic): replace all references to 'startingpoint'",
+              "chore(automatic): replace all references to 'template'",
             content: btoa(readme),
             sha: readmeJson.sha,
           }),
@@ -337,7 +340,7 @@ Remember to include logs, both from the console (enable XHR) and here.";
     {:else if authorized}
       {#await forked then forked}
         {#if forked && !useTemplate && log == ""}
-          It appears that you already have a fork of ublue-os/startingpoint. <br
+          It appears that you already have a fork of blue-build/template. <br
           />
           Do you want to continue by creating a repository that is not a fork? (using
           the template)
