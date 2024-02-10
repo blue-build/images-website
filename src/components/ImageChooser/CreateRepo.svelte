@@ -53,7 +53,7 @@
           }
         );
         repo = await res.json();
-        if (res.status != 200) {
+        if (!res.ok) {
           log += "Repo creation failed: \n";
           log += JSON.stringify(repo);
           log += "\n";
