@@ -1,6 +1,6 @@
 FROM gcr.io/projectsigstore/cosign:latest as cosign-bin
 
-FROM alpine:3.14
+FROM alpine:3.19
 
 COPY --from=cosign-bin /ko-app/cosign /usr/local/bin/cosign
 
