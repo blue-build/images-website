@@ -149,7 +149,7 @@ Remember to include logs, both from the console (enable XHR) and here.";
     <div class="flex flex-row gap-2 items-center flex-wrap">
       First you need to run the command below:
       <pre
-        class="bg-fg-secondary text-bg-page dark:bg-bg-page dark:text-fg-secondary p-2 whitespace-pre-wrap">podman run -it ghcr.io/ublue-os/cosign-generate-keypair</pre>
+        class="bg-fg-secondary text-bg-page dark:bg-bg-page dark:text-fg-secondary p-2 whitespace-pre-wrap">podman run --rm -it ghcr.io/blue-build/cosign-generate-keypair</pre>
       Then copy the keys to the fields below and press submit.
       <div class="p-2 flex flex-col gap-2 w-full">
         <label for="public">Public key:</label>
