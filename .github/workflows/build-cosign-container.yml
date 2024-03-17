@@ -14,7 +14,7 @@ env:
 jobs:
   push-ghcr:
     name: Build and push image
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
@@ -109,7 +109,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       # Sign container
-      - uses: sigstore/cosign-installer@v3.0.3
+      - uses: sigstore/cosign-installer@v3.4.0
         if: github.event_name != 'pull_request'
 
       - name: Sign container image
